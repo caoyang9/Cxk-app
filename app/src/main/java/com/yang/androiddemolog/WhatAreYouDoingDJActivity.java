@@ -149,13 +149,6 @@ public class WhatAreYouDoingDJActivity extends AppCompatActivity {
         // 停止旋转
         stopDiscRotation();
         // 解除与 Service 的绑定
-//        if (serviceBoundFlag) {
-//            unbindService(serviceConnection);
-//            serviceBoundFlag = false;
-//        }
         unbindService(serviceConnection);
-        // 停止服务，确保应用被清除时服务也停止
-        Intent stopIntent = new Intent(this, MusicService.class);
-        stopService(stopIntent);
     }
 }
