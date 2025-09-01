@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">CTRL</string>
+    <string name="welcome_text">Welcome to cxk ~</string>
+
+    <!-- 第一排按钮 -->
+    <string name="btn_sing">Sing</string>
+    <string name="btn_dance">Dance</string>
+    <string name="btn_rap">Rap</string>
+    <string name="btn_basketball">Basketball</string>
+
+    <!-- 第二排按钮 -->
+    <string name="btn_intro">Introduction</string>
+    <string name="btn_what">ganma</string>
+    <string name="btn_whatDJ">ganmaDJ</string>
+    <string name="btn_chicken">ji</string>
+</resources>

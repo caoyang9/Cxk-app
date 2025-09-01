@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tv_welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:text="@string/welcome_text"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.181"
+        app:layout_constraintWidth_percent="0.9" />
+
+    <LinearLayout
+        android:id="@+id/buttonContainer1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.609"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.358"
+        app:layout_constraintWidth_percent="0.9">
+
+        <Button
+            android:id="@+id/btn_sing"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:minWidth="60dp"
+            android:text="@string/btn_sing"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/btn_dance"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:minWidth="60dp"
+            android:text="@string/btn_dance"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/btn_rap"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1.1"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:minWidth="60dp"
+            android:text="@string/btn_rap"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/btn_basketball"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1.1"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:minWidth="60dp"
+            android:text="@string/btn_basketball"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/buttonContainer2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/buttonContainer1"
+        app:layout_constraintVertical_bias="0.15"
+        app:layout_constraintWidth_percent="0.9"> <!-- 宽度占父布局的90% -->
+
+        <Button
+            android:id="@+id/btn_introduction"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1.1"
+            android:text="@string/btn_intro"
+            android:textSize="14sp"
+            android:minWidth="60dp"
+            android:maxLines="2"
+            android:ellipsize="end"/>
+
+        <Button
+            android:id="@+id/btn_whatAreYouDoing"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1.1"
+            android:text="@string/btn_what"
+            android:textSize="14sp"
+            android:minWidth="60dp"
+            android:maxLines="2"
+            android:ellipsize="end"/>
+
+        <Button
+            android:id="@+id/btn_whatAreYouDoingDJ"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1.1"
+            android:text="@string/btn_whatDJ"
+            android:textSize="14sp"
+            android:minWidth="60dp"
+            android:maxLines="2"
+            android:ellipsize="end"/>
+
+        <Button
+            android:id="@+id/btn_justBecause"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="0.9"
+            android:text="@string/btn_chicken"
+            android:textSize="14sp"
+            android:minWidth="60dp"
+            android:maxLines="2"
+            android:ellipsize="end"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_switch_language"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="切换语言/Change Language"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_open"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="打开页面"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.598" />
+
+    <TextView
+        android:id="@+id/tv_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="等待返回结果..."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_open" />
+
+
+
+    <LinearLayout
+        android:id="@+id/service_buttons_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:weightSum="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_result"
+        tools:ignore="DuplicateIds">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <Button
+                android:id="@+id/btn_start_service"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="StartService"
+                android:backgroundTint="#2196F3"
+                android:textColor="#FFFFFF"
+                android:elevation="4dp"
+                android:stateListAnimator="@null" />
+
+            <Button
+                android:id="@+id/btn_bind_service"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="BindService"
+                android:backgroundTint="#2196F3"
+                android:textColor="#FFFFFF"
+                android:elevation="4dp"
+                android:stateListAnimator="@null" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp"
+            android:layout_marginStart="16dp">
+
+            <Button
+                android:id="@+id/btn_stop_service"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="StopService"
+                android:backgroundTint="#2196F3"
+                android:textColor="#FFFFFF"
+                android:elevation="4dp"
+                android:stateListAnimator="@null" />
+
+            <Button
+                android:id="@+id/btn_unbind_service"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="UnbindService"
+                android:backgroundTint="#2196F3"
+                android:textColor="#FFFFFF"
+                android:elevation="4dp"
+                android:stateListAnimator="@null" />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <!-- 必须添加的前台服务权限 -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <!-- 根据服务类型添加相应的特定权限（推荐） -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+
+    <!-- 申请接收开机广播的权限 -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.AndroidDemoLog"
+        tools:targetApi="31">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".SingActivity" android:exported="false" />
+        <activity android:name=".DanceActivity" android:exported="false" />
+        <activity android:name=".RapActivity" android:exported="false" />
+        <activity android:name=".BasketballActivity" android:exported="false" />
+        <activity android:name=".IntroductionActivity" android:exported="false" />
+        <activity android:name=".WhatAreYouDoingActivity" android:exported="false"/>
+        <activity android:name=".JustBecauseActivity" android:exported="false"/>
+        <activity android:name=".TargetActivity" android:exported="false"/>
+        <activity android:name=".WhatAreYouDoingDJActivity" android:exported="false"/>
+
+        <service android:name="com.yang.service.MusicService"/>
+        <service
+            android:name="com.yang.service.MyForegroundService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="mediaPlayback" />
+
+        <!-- 静态注册开机广播接收器 -->
+        <receiver
+            android:name="com.yang.broadcast.BootCompletedReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <!-- 监听开机完成广播 -->
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>

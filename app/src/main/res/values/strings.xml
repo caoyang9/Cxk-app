@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">唱跳rap篮球</string>
+    <string name="welcome_text">ikun之家~</string>
+    <string name="hint_edittext">请输入信息</string>
+    <string name="button_confirm">请点击确认</string>
+    <string name="display_text">您输入的信息将显示在这里</string>
+
+    <!-- 第一排按钮 -->
+    <string name="btn_sing">唱</string>
+    <string name="btn_dance">跳</string>
+    <string name="btn_rap">Rap</string>
+    <string name="btn_basketball">篮球</string>
+
+    <!-- 第二排按钮 -->
+    <string name="btn_intro">介绍</string>
+    <string name="btn_what">干嘛</string>
+    <string name="btn_whatDJ">干嘛Dj</string>
+    <string name="btn_chicken">鸡</string>
+</resources>
