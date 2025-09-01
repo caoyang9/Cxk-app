@@ -52,7 +52,6 @@ public class BootCompletedReceiver extends BroadcastReceiver {
             notificationManager.notify(1001, builder.build()); // 1001是一个唯一的通知ID
         }
     }
-
     private void createNotificationChannel(Context context) {
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
             CharSequence name = "Boot Completed";
