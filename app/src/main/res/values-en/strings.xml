@@ -32,4 +32,11 @@
     <string name="trans7">The service has been bound</string>
     <string name="trans8">Service unbinding</string>
     <string name="trans9">Service not bound</string>
+    <string name="trans10">The service is running</string>
+    <string name="trans11">The service has been started</string>
+
+    <!-- Notification 常量 -->
+    <string name="notification0">CXk has sent it to you </string>
+    <string name="notification1">Front desk service is running</string>
+    <string name="notification3"> private messages</string>
 </resources>

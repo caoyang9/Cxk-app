@@ -32,4 +32,11 @@
     <string name="trans7">服务已经绑定</string>
     <string name="trans8">服务解绑</string>
     <string name="trans9">服务未绑定</string>
+    <string name="trans10">服务正在运行中</string>
+    <string name="trans11">服务已经启动</string>
+
+    <!-- Notification 常量 -->
+    <string name="notification0">蔡徐坤给你发了 </string>
+    <string name="notification1">前台服务运行中</string>
+    <string name="notification3"> 条私信</string>
 </resources>
