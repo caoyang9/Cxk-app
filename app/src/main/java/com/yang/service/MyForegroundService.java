@@ -103,7 +103,7 @@ public class MyForegroundService extends Service {
      */
     private void startForegroundService() {
         // 创建通知
-        Notification notification = createNotification("服务正在运行中", "服务已启动");
+        Notification notification = createNotification(getString(R.string.trans10), getString(R.string.trans11));
 
         // 启动前台服务，且必须提供一个有效的Notification实例
         try {
@@ -138,10 +138,10 @@ public class MyForegroundService extends Service {
             @Override
             public void run() {
                 notificationCount++;
-                String content = "蔡徐坤给你发了 " + notificationCount + " 条私信";
+                String content = getString(R.string.notification0) + notificationCount + getString(R.string.notification3);
 
                 // 更新通知
-                Notification notification = createNotification("前台服务运行中", content);
+                Notification notification = createNotification(getString(R.string.notification1), content);
                 NotificationManager notificationManager = getSystemService(NotificationManager.class);
                 notificationManager.notify(NOTIFICATION_ID, notification);
 
