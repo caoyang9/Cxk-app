@@ -1,9 +1,6 @@
 <resources>
     <string name="app_name">唱跳rap篮球</string>
     <string name="welcome_text">ikun之家~</string>
-    <string name="hint_edittext">请输入信息</string>
-    <string name="button_confirm">请点击确认</string>
-    <string name="display_text">您输入的信息将显示在这里</string>
 
     <!-- 第一排按钮 -->
     <string name="btn_sing">唱</string>
@@ -16,4 +13,23 @@
     <string name="btn_what">干嘛</string>
     <string name="btn_whatDJ">干嘛Dj</string>
     <string name="btn_chicken">鸡</string>
+
+    <!-- Toast常量消息 -->
+    <string name="toast_net0">已连接到 WiFi 网络</string>
+    <string name="toast_net1">已连接到移动数据网络</string>
+    <string name="toast_net2">已连接到未知网络类型</string>
+    <string name="toast_net3">网络连接已断开</string>
+
+    <!-- Message 常量 -->
+    <string name="trans0">你好，这是来自MainActivity的数据</string>
+    <string name="trans1">返回结果：</string>
+    <string name="trans2">用户取消了操作</string>
+    <string name="trans3">切换为英文</string>
+
+    <string name="trans4">服务启动</string>
+    <string name="trans5">服务停止</string>
+    <string name="trans6">服务绑定</string>
+    <string name="trans7">服务已经绑定</string>
+    <string name="trans8">服务解绑</string>
+    <string name="trans9">服务未绑定</string>
 </resources>

@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
 
         btnOpen.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, TargetActivity.class);
-            intent.putExtra("message", "你好，这是来自MainActivity的数据");
+            intent.putExtra("message", getString(R.string.trans0));
             startActivityForResult(intent, REQUEST_CODE);
         });
 
@@ -101,9 +101,9 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == REQUEST_CODE) {
             if (resultCode == RESULT_OK && data != null) {
                 String result = data.getStringExtra("result");
-                tvResult.setText("返回结果: " + result);
+                tvResult.setText(getString(R.string.trans1) + result);
             } else {
-                tvResult.setText("用户取消了操作");
+                tvResult.setText(getString(R.string.trans2));
             }
         }
     }
@@ -122,9 +122,9 @@ public class MainActivity extends AppCompatActivity {
      */
     private void updateSwitchButtonText() {
         if (currentLanguage.equals("zh")) {
-            btnSwitchLanguage.setText("切换为英文");
+            btnSwitchLanguage.setText(getString(R.string.trans3));
         } else {
-            btnSwitchLanguage.setText("Switch to Chinese");
+            btnSwitchLanguage.setText(getString(R.string.trans3));
         }
     }
 
@@ -251,7 +251,7 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, "点击startService按钮");
         Intent intent = new Intent(this, MyForegroundService.class);
         startService(intent);
-        Toast.makeText(this, "服务启动", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, getString(R.string.trans4), Toast.LENGTH_SHORT).show();
     }
 
     /**
@@ -261,7 +261,7 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, "点击stopService按钮");
         Intent intent = new Intent(this, MyForegroundService.class);
         stopService(intent);
-        Toast.makeText(this, "服务停止", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, getString(R.string.trans5), Toast.LENGTH_SHORT).show();
     }
 
     /**
@@ -272,9 +272,9 @@ public class MainActivity extends AppCompatActivity {
         if (!serviceBound) {
             Intent intent = new Intent(this, MyForegroundService.class);
             bindService(intent, serviceConnection, BIND_AUTO_CREATE);
-            Toast.makeText(this, "服务绑定", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.trans6), Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(this, "服务已绑定", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.trans7), Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -286,9 +286,9 @@ public class MainActivity extends AppCompatActivity {
         if (serviceBound) {
             unbindService(serviceConnection);
             serviceBound = false;
-            Toast.makeText(this, "服务解绑", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.trans8), Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(this, "服务未绑定", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.trans9), Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -316,17 +316,15 @@ public class MainActivity extends AppCompatActivity {
             if (activeNetwork != null && activeNetwork.isConnected()) {
                 // 网络已连接
                 if (activeNetwork.getType() == ConnectivityManager.TYPE_WIFI) {
-                    message = "已连接到 WiFi 网络";
+                    message = getString(R.string.toast_net0);
                 } else if (activeNetwork.getType() == ConnectivityManager.TYPE_MOBILE) {
-                    message = "已连接到移动数据网络";
-                } else if (activeNetwork.getType() == ConnectivityManager.TYPE_ETHERNET) {
-                    message = "已连接到有线网络";
+                    message = getString(R.string.toast_net1);;
                 } else {
-                    message = "已连接到未知网络类型";
+                    message = getString(R.string.toast_net2);;
                 }
             } else {
                 // 网络断开连接
-                message = "网络连接已断开";
+                message = getString(R.string.toast_net3);;
             }
 
             Toast.makeText(context, message, Toast.LENGTH_SHORT).show();

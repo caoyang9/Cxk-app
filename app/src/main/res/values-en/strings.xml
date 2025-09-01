@@ -13,4 +13,23 @@
     <string name="btn_what">ganma</string>
     <string name="btn_whatDJ">ganmaDJ</string>
     <string name="btn_chicken">ji</string>
+
+    <!-- Toast常量消息 -->
+    <string name="toast_net0">Connected to WiFi network</string>
+    <string name="toast_net1">Connected to mobile data network</string>
+    <string name="toast_net2">Connected to an unknown network type</string>
+    <string name="toast_net3">The network connection has been disconnected</string>
+
+    <!-- Message 常量 -->
+    <string name="trans0">Hello, this is data from MainActivity</string>
+    <string name="trans1">return result:</string>
+    <string name="trans2">The user canceled the operation</string>
+    <string name="trans3">Switch to Chinese</string>
+
+    <string name="trans4">Service startup</string>
+    <string name="trans5">Service stopped</string>
+    <string name="trans6">Service binding</string>
+    <string name="trans7">The service has been bound</string>
+    <string name="trans8">Service unbinding</string>
+    <string name="trans9">Service not bound</string>
 </resources>
