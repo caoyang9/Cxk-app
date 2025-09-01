@@ -4,12 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
@@ -41,10 +45,20 @@ public class MainActivity extends AppCompatActivity {
     private MyForegroundService foregroundService;
     private boolean serviceBound = false;
 
+    private NetworkChangeReceiver networkReceiver;
+    private IntentFilter intentFilter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // 初始化广播接收器和过滤器
+        networkReceiver = new NetworkChangeReceiver();
+        intentFilter = new IntentFilter();
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+            intentFilter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
+        }
 
         // 创建ServiceChannel
         createNotificationChannel();
@@ -288,6 +302,37 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_unbind_service).setOnClickListener(v -> unbindService());
     }
 
+    /**
+     * 内部广播接收器类
+     */
+    public class NetworkChangeReceiver extends BroadcastReceiver {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            ConnectivityManager cm = (ConnectivityManager) context
+                    .getSystemService(Context.CONNECTIVITY_SERVICE);
+            NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+
+            String message;
+            if (activeNetwork != null && activeNetwork.isConnected()) {
+                // 网络已连接
+                if (activeNetwork.getType() == ConnectivityManager.TYPE_WIFI) {
+                    message = "已连接到 WiFi 网络";
+                } else if (activeNetwork.getType() == ConnectivityManager.TYPE_MOBILE) {
+                    message = "已连接到移动数据网络";
+                } else if (activeNetwork.getType() == ConnectivityManager.TYPE_ETHERNET) {
+                    message = "已连接到有线网络";
+                } else {
+                    message = "已连接到未知网络类型";
+                }
+            } else {
+                // 网络断开连接
+                message = "网络连接已断开";
+            }
+
+            Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
+        }
+    }
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -298,12 +343,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         Log.i("Lifecycle", "MainActivity-onResume()");
+        // 注册广播接收器
+        registerReceiver(networkReceiver, intentFilter);
     }
 
     @Override
     protected void onPause() {
         super.onPause();
         Log.i("Lifecycle", "MainActivity-onPause()");
+        // 取消注册广播接收器，避免内存泄漏
+        unregisterReceiver(networkReceiver);
     }
 
     @Override
