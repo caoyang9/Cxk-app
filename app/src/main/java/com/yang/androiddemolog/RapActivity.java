@@ -1,8 +1,10 @@
 package com.yang.androiddemolog;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -13,11 +15,17 @@ import android.widget.Toast;
 import android.widget.VideoView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.google.android.material.snackbar.Snackbar;
 
 public class RapActivity extends AppCompatActivity {
     private VideoView videoView;
+
+    /**
+     * 点击返回键时，发出的广播动作
+     */
+    private static final String BACK_BUTTON_ACTION = "com.yang.rapActivity.BACK_BUTTON_PRESSED";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +41,21 @@ public class RapActivity extends AppCompatActivity {
     private void initViews() {
         videoView = findViewById(R.id.videoView);
         Button btnBack = findViewById(R.id.btn_back);
-        btnBack.setOnClickListener(v -> finish());
+        btnBack.setOnClickListener(v -> {
+            sendBackButtonBroadcast();
+            finish();
+        });
+    }
+
+    /**
+     * 点击返回按钮发广播消息
+     */
+    private void sendBackButtonBroadcast() {
+        Intent broadIntent = new Intent(BACK_BUTTON_ACTION);
+        broadIntent.putExtra("key0", getString(R.string.broadcast_0));
+        broadIntent.putExtra("key1", getString(R.string.broadcast_1));
+
+        LocalBroadcastManager.getInstance(this).sendBroadcast(broadIntent);
     }
 
     private void setupVideoPlayer() {

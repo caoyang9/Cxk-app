@@ -1,6 +1,7 @@
 package com.yang.androiddemolog;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -47,6 +48,13 @@ public class MainActivity extends AppCompatActivity {
 
     private NetworkChangeReceiver networkReceiver;
     private IntentFilter intentFilter;
+
+    private static final String BACK_BUTTON_ACTION = "com.yang.rapActivity.BACK_BUTTON_PRESSED";
+
+    /**
+     * Rap返回时的广播接收器
+     */
+    private BroadcastReceiver rapBackReceiver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -343,6 +351,27 @@ public class MainActivity extends AppCompatActivity {
         Log.i("Lifecycle", "MainActivity-onResume()");
         // 注册广播接收器
         registerReceiver(networkReceiver, intentFilter);
+        // 注册自定义的广播接收器
+        registerRapBackReceiver();
+    }
+
+    /**
+     * 自定义的Rap广播接收器
+     */
+    private void registerRapBackReceiver() {
+        rapBackReceiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                if (intent != null && BACK_BUTTON_ACTION.equals(intent.getAction())) {
+                    String value0 = intent.getStringExtra("key0");
+                    String value1 = intent.getStringExtra("key1");
+                    Toast.makeText(context, value0 + ":" + value1, Toast.LENGTH_SHORT).show();
+                }
+            }
+        };
+        // 创建IntentFilter并注册接收器
+        IntentFilter filter = new IntentFilter(BACK_BUTTON_ACTION);
+        LocalBroadcastManager.getInstance(this).registerReceiver(rapBackReceiver, filter);
     }
 
     @Override
@@ -373,6 +402,10 @@ public class MainActivity extends AppCompatActivity {
         if (serviceBound) {
             unbindService(serviceConnection);
             serviceBound = false;
+        }
+        // 取消注册广播接收器
+        if (rapBackReceiver != null) {
+            LocalBroadcastManager.getInstance(this).unregisterReceiver(rapBackReceiver);
         }
     }
 }
