@@ -22,7 +22,7 @@
 
     <!-- Message 常量 -->
     <string name="trans0">你好，这是来自MainActivity的数据</string>
-    <string name="trans1">返回结果：</string>
+    <string name="trans1">坤坤热点：</string>
     <string name="trans2">用户取消了操作</string>
     <string name="trans3">切换为英文</string>
 
