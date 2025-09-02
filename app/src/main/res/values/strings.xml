@@ -39,4 +39,8 @@
     <string name="notification0">蔡徐坤给你发了 </string>
     <string name="notification1">前台服务运行中</string>
     <string name="notification3"> 条私信</string>
+
+    <!-- broadcast常量 -->
+    <string name="broadcast_0">爱坤</string>
+    <string name="broadcast_1">感谢收听哥哥的歌</string>
 </resources>

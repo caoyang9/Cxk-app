@@ -39,4 +39,8 @@
     <string name="notification0">CXk has sent it to you </string>
     <string name="notification1">Front desk service is running</string>
     <string name="notification3"> private messages</string>
+
+    <!-- broadcast常量 -->
+    <string name="broadcast_0">ikun</string>
+    <string name="broadcast_1">Thank you for listening to my brother\'s song</string>
 </resources>
