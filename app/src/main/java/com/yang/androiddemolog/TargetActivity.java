@@ -19,12 +19,12 @@ public class TargetActivity extends AppCompatActivity {
 
         // 接收数据
         String message = getIntent().getStringExtra("message");
-        tvMessage.setText("收到: " + message);
+        tvMessage.setText("获取一条热点新闻：" + message);
 
         // 返回数据
         btnReturn.setOnClickListener(v -> {
             Intent resultIntent = new Intent();
-            resultIntent.putExtra("result", "这是返回的数据");
+            resultIntent.putExtra("result", "今日凌晨，蔡徐坤发布了一首单曲！");
             setResult(RESULT_OK, resultIntent);
             finish(); // 关闭当前页面
         });
