@@ -114,7 +114,7 @@ public class IntroductionActivity extends AppCompatActivity {
     private void setupVideoPlayer() {
         // 本地raw资源
         try {
-            String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.cxk_sing;
+            String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.cxk_introduction;
             Uri uri = Uri.parse(videoPath);
             videoView.setVideoURI(uri);
 
