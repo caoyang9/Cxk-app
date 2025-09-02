@@ -3,7 +3,7 @@
     <string name="welcome_text">Welcome to cxk ~</string>
 
     <!-- 第一排按钮 -->
-    <string name="btn_sing">Sing</string>
+    <string name="btn_sing">Sing(all)</string>
     <string name="btn_dance">Dance</string>
     <string name="btn_rap">Rap</string>
     <string name="btn_basketball">Basketball</string>
