@@ -17,12 +17,18 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.IBinder;
+import android.os.Looper;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.View;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.yang.constant.ChannelConstants;
 import com.yang.service.MyForegroundService;
 
@@ -56,6 +62,12 @@ public class MainActivity extends AppCompatActivity {
      */
     private BroadcastReceiver rapBackReceiver;
 
+
+    /**
+     * 延迟看球handler
+     */
+    private Handler delayBasketballHandler;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,6 +98,8 @@ public class MainActivity extends AppCompatActivity {
             intent.putExtra("message", getString(R.string.trans0));
             startActivityForResult(intent, REQUEST_CODE);
         });
+
+        delayBasketballHandler = new Handler(Looper.getMainLooper());
 
         // 获取当前应用语言
         currentLanguage = getSavedLanguage();
@@ -367,13 +381,71 @@ public class MainActivity extends AppCompatActivity {
                     String value1 = intent.getStringExtra("key1");
                     Toast.makeText(context, value0 + ":" + value1, Toast.LENGTH_SHORT).show();
                 }
+                // 听完Rap点击返回后，两秒后自动去看哥哥打篮球
+                showDelayedSnackbar();
+                delayOpenBasketballActivity();
             }
         };
         // 创建IntentFilter并注册接收器
         IntentFilter filter = new IntentFilter(BACK_BUTTON_ACTION);
         LocalBroadcastManager.getInstance(this).registerReceiver(rapBackReceiver, filter);
     }
+    private void showDelayedSnackbar() {
+        View rootView = findViewById(android.R.id.content);
+        Snackbar snackbar = Snackbar.make(rootView, "5秒后将会播放哥哥打篮球...", Snackbar.LENGTH_LONG)
+                .setAction("取消", v -> cancelDelayedNavigation());
 
+        View snackbarView = snackbar.getView();
+        FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) snackbarView.getLayoutParams();
+
+        // 设置Snackbar显示在顶部
+        params.gravity = Gravity.TOP;
+        params.topMargin = getStatusBarHeight() + convertDpToPx(16); // 状态栏高度 + 16dp间距
+
+        snackbarView.setLayoutParams(params);
+        snackbar.show();
+    }
+
+    private int getStatusBarHeight() {
+        int result = 0;
+        int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
+        if (resourceId > 0) {
+            result = getResources().getDimensionPixelSize(resourceId);
+        }
+        return result;
+    }
+
+    private int convertDpToPx(float dp) {
+        return (int) (dp * getResources().getDisplayMetrics().density);
+    }
+
+    /**
+     * 延迟两秒自动打开BasketballActivity
+     */
+    private void delayOpenBasketballActivity() {
+        delayBasketballHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                openBasketballActivity();
+            }
+        }, 5000);
+    }
+
+    private void openBasketballActivity() {
+        Intent intent = new Intent(MainActivity.this, BasketballActivity.class);
+        intent.putExtra("来自rap的自动跳转", true);
+        intent.putExtra("欢迎：", getString(R.string.broadcast_0) + " " + "听完歌就来看球吗");
+
+        startActivity(intent);
+    }
+
+    // 取消延迟导航的方法
+    private void cancelDelayedNavigation() {
+        if (delayBasketballHandler != null) {
+            delayBasketballHandler.removeCallbacksAndMessages(null);
+            Toast.makeText(this, "已取消跳转", Toast.LENGTH_SHORT).show();
+        }
+    }
     @Override
     protected void onPause() {
         super.onPause();
@@ -406,6 +478,11 @@ public class MainActivity extends AppCompatActivity {
         // 取消注册广播接收器
         if (rapBackReceiver != null) {
             LocalBroadcastManager.getInstance(this).unregisterReceiver(rapBackReceiver);
+        }
+
+        // 移除所有延迟任务，避免内存泄漏
+        if (delayBasketballHandler != null) {
+            delayBasketballHandler.removeCallbacksAndMessages(null);
         }
     }
 }

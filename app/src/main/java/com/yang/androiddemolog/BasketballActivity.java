@@ -1,5 +1,6 @@
 package com.yang.androiddemolog;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
@@ -29,6 +30,17 @@ public class BasketballActivity extends AppCompatActivity {
 
         initViews();
         setupVideoPlayer();
+
+        // 接收数据
+        Intent intent = getIntent();
+        boolean fromRap = intent.getBooleanExtra("来自rap的自动跳转", false);
+        String welcomeMsg = intent.getStringExtra("欢迎：");
+
+        // 显示数据
+        TextView textView = findViewById(R.id.textView1);
+        if (fromRap && welcomeMsg != null) {
+            textView.setText("来自Rap: " + welcomeMsg);
+        }
     }
 
     private void initViews() {
