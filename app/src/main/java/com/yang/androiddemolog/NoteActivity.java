@@ -3,6 +3,7 @@ package com.yang.androiddemolog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
+import android.gesture.GestureOverlayView;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -17,9 +18,14 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -45,6 +51,7 @@ public class NoteActivity extends AppCompatActivity {
         setContentView(R.layout.activity_note);
 
         initViews();
+        loadNotesFromPreferences();
         setupSpinner();
         setupButtons();
     }
@@ -58,9 +65,10 @@ public class NoteActivity extends AppCompatActivity {
         btnNew = findViewById(R.id.btn_new);
     }
 
+    /**
+     * 下拉框
+     */
     private void setupSpinner() {
-        loadNotesFromPreferences();
-
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 this,
                 android.R.layout.simple_spinner_item,
@@ -90,14 +98,43 @@ public class NoteActivity extends AppCompatActivity {
     private void loadNotesFromPreferences() {
         SharedPreferences sharedPreferences = getSharedPreferences(NOTE_PREFERENCE, MODE_PRIVATE);
 
-        Set<String> titlesSet = sharedPreferences.getStringSet(NOTE_TITLES_KEY, new HashSet<String>());
-        Set<String> contentsSet = sharedPreferences.getStringSet(NOTE_CONTENTS_KEY, new HashSet<String>());
+        Gson gson = new Gson();
+
+        // 加载标题列表
+        String titlesJson = sharedPreferences.getString(NOTE_TITLES_KEY, "[]");
+        Type titlesType = new TypeToken<LinkedHashSet<String>>() {}.getType();
+        Set<String> titlesSet = gson.fromJson(titlesJson, titlesType);
+
+        // 加载内容列表
+        String contentsJson = sharedPreferences.getString(NOTE_CONTENTS_KEY, "[]");
+        Type contentsType = new TypeToken<LinkedHashSet<String>>() {}.getType();
+        Set<String> contentsSet = gson.fromJson(contentsJson, contentsType);
+
 
         noteTitles.clear();
         noteContents.clear();
 
-        noteTitles.addAll(titlesSet);
-        noteContents.addAll(contentsSet);
+        if (titlesSet != null) noteTitles.addAll(titlesSet);
+        if (contentsSet != null) noteContents.addAll(contentsSet);
+    }
+
+    private void saveNotesToPreferences() {
+        SharedPreferences sharedPreferences = getSharedPreferences(NOTE_PREFERENCE, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        Gson gson = new Gson();
+
+        // 保存标题列表（使用LinkedHashSet保持顺序）
+        LinkedHashSet<String> titlesSet = new LinkedHashSet<>(noteTitles);
+        String titlesJson = gson.toJson(titlesSet);
+        editor.putString(NOTE_TITLES_KEY, titlesJson);
+
+        // 保存内容列表（使用LinkedHashSet保持顺序）
+        LinkedHashSet<String> contentsSet = new LinkedHashSet<>(noteContents);
+        String contentsJson = gson.toJson(contentsSet);
+        editor.putString(NOTE_CONTENTS_KEY, contentsJson);
+
+        editor.apply();
     }
 
     private void setupButtons() {
@@ -127,37 +164,26 @@ public class NoteActivity extends AppCompatActivity {
         String content = etNoteContent.getText().toString().trim();
 
         if (title.isEmpty()) {
-            Toast.makeText(this, R.string.title_empty, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "标题不能为空", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        SharedPreferences sharedPreferences = getSharedPreferences(NOTE_PREFERENCE, MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
+        // 检查标题是否已存在
+        int existingIndex = noteTitles.indexOf(title);
 
-        // 获取现有的标题和内容集合
-        Set<String> existingTitles = new HashSet<>(sharedPreferences.getStringSet(NOTE_TITLES_KEY, new HashSet<String>()));
-        Set<String> existingContents = new HashSet<>(sharedPreferences.getStringSet(NOTE_CONTENTS_KEY, new HashSet<String>()));
-
-        // 如果标题已存在，先移除旧的内容（实现更新功能）
-        if (existingTitles.contains(title)) {
-            int index = new ArrayList<>(existingTitles).indexOf(title);
-            List<String> tempContents = new ArrayList<>(existingContents);
-            if (index < tempContents.size()) {
-                tempContents.set(index, content);
-                existingContents = new HashSet<>(tempContents);
-            }
+        if (existingIndex != -1) {
+            // 更新现有笔记
+            noteContents.set(existingIndex, content);
         } else {
-            // 如果是新标题，添加到集合中
-            existingTitles.add(title);
-            existingContents.add(content);
+            // 添加新笔记
+            noteTitles.add(title);
+            noteContents.add(content);
         }
 
-        // 保存回 SharedPreferences
-        editor.putStringSet(NOTE_TITLES_KEY, existingTitles);
-        editor.putStringSet(NOTE_CONTENTS_KEY, existingContents);
-        editor.apply();
+        // 保存到SharedPreferences
+        saveNotesToPreferences();
 
-        Toast.makeText(this, R.string.save_success, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "保存成功", Toast.LENGTH_SHORT).show();
         refreshSpinner();
         clearInputFields();
     }
@@ -213,10 +239,10 @@ public class NoteActivity extends AppCompatActivity {
             imm.showSoftInput(etNoteTitle, InputMethodManager.SHOW_IMPLICIT);
         }
 
-        // 可选：给用户一个提示
+        // 给用户一个提示
         Toast.makeText(this, "开始创建新笔记", Toast.LENGTH_SHORT).show();
 
-        // 可选：重置Spinner选择（设置为默认位置）
+        // 重置Spinner选择（设置为默认位置）
         spinnerNotes.setSelection(0);
     }
 }
