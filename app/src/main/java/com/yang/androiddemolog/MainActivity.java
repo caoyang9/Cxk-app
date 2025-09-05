@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button btnIntroduction, btnWhatAreYouDoing, btnWhatAreYouDoingDJ, btnJustBecause;
 
-    private Button btnSwitchLanguage, btnTimer;
+    private Button btnSwitchLanguage, btnTimer, btnNote;
 
     private String currentLanguage = "zh";
 
@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
         setupClickListeners();
 
         // 初始化计时器按钮
-        initTimerBtn();
+        initTimerAndNoteBtn();
 
         // 数据发送
         tvResult = findViewById(R.id.tv_result);
@@ -117,8 +117,9 @@ public class MainActivity extends AppCompatActivity {
     /**
      * 初始化计时器按钮，绑定点击事件
      */
-    private void initTimerBtn() {
+    private void initTimerAndNoteBtn() {
         btnTimer = findViewById(R.id.btn_timer);
+        btnNote = findViewById(R.id.btn_note);
         btnTimer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -127,6 +128,9 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        // 跳转到笔记Activity
+        btnNote.setOnClickListener(view ->
+                startActivity(new Intent(MainActivity.this, NoteActivity.class)));
     }
 
     /**
