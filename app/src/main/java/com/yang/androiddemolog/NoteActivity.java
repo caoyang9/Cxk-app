@@ -45,6 +45,10 @@ public class NoteActivity extends AppCompatActivity {
     private List<String> noteTitles = new ArrayList<>();
     private List<String> noteContents = new ArrayList<>();
 
+    // 添加一个标志位来区分是用户选择还是程序设置
+    private boolean userSelecting = true;
+    private boolean creatingNew = false;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -80,6 +84,13 @@ public class NoteActivity extends AppCompatActivity {
         spinnerNotes.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                // 如果是程序设置的选中（如新建后），不加载内容
+                if (!userSelecting && creatingNew) {
+                    userSelecting = true; // 重置标志位
+                    creatingNew = false;
+                    return;
+                }
+
                 if (position >= 0 && position < noteContents.size()) {
                     String selectedTitle = noteTitles.get(position);
                     String selectedContent = noteContents.get(position);
@@ -168,6 +179,10 @@ public class NoteActivity extends AppCompatActivity {
             return;
         }
 
+        // 保存当前选中的位置
+        int currentPosition = spinnerNotes.getSelectedItemPosition();
+        String currentTitle = currentPosition >= 0 ? noteTitles.get(currentPosition) : null;
+
         // 检查标题是否已存在
         int existingIndex = noteTitles.indexOf(title);
 
@@ -184,13 +199,32 @@ public class NoteActivity extends AppCompatActivity {
         saveNotesToPreferences();
 
         Toast.makeText(this, "保存成功", Toast.LENGTH_SHORT).show();
-        refreshSpinner();
-        clearInputFields();
+
+        // 只刷新数据，不清空输入框，保持当前位置
+        refreshDataWithoutResetting();
+
+        // 恢复选中位置：如果是更新现有笔记，保持原位置；如果是新建，选中新项
+        if (existingIndex != -1) {
+            // 更新操作，保持原位置
+            spinnerNotes.setSelection(currentPosition);
+        } else {
+            // 新建操作，选中最新添加的项
+            spinnerNotes.setSelection(noteTitles.size() - 1);
+        }
     }
 
-    private void refreshSpinner() {
+    /**
+     * 刷新数据但不重置界面状态
+     */
+    private void refreshDataWithoutResetting() {
+        // 保存当前输入框的内容
+        String currentTitle = etNoteTitle.getText().toString();
+        String currentContent = etNoteContent.getText().toString();
+
+        // 重新加载数据
         loadNotesFromPreferences();
 
+        // 刷新Spinner适配器
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 this,
                 android.R.layout.simple_spinner_item,
@@ -198,6 +232,10 @@ public class NoteActivity extends AppCompatActivity {
         );
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerNotes.setAdapter(adapter);
+
+        // 恢复输入框内容（防止在刷新过程中被清空）
+        etNoteTitle.setText(currentTitle);
+        etNoteContent.setText(currentContent);
     }
 
     private void clearInputFields() {
@@ -227,6 +265,9 @@ public class NoteActivity extends AppCompatActivity {
      * 创建新笔记的方法
      */
     private void createNewNote() {
+        userSelecting = false;
+        creatingNew = true;
+
         // 清空输入框
         clearInputFields();
 
@@ -243,6 +284,6 @@ public class NoteActivity extends AppCompatActivity {
         Toast.makeText(this, "开始创建新笔记", Toast.LENGTH_SHORT).show();
 
         // 重置Spinner选择（设置为默认位置）
-        spinnerNotes.setSelection(0);
+        spinnerNotes.setSelection(0, false);
     }
 }
