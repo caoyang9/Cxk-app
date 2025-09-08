@@ -20,6 +20,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.yang.androiddemolog.strategy.NoteStorageStrategy;
+import com.yang.androiddemolog.strategy.strategyImpl.SharedPreferencesStrategy;
+import com.yang.constant.enums.NoteStrategyEnum;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -38,6 +41,12 @@ public class NoteActivity extends AppCompatActivity {
     private Button btnCancel;
     private Button btnNew;
 
+    // 策略接口
+    private NoteStorageStrategy noteStorageStrategy;
+
+    // 策略标志 SharedPreferences: sp(默认)   SQLite: sl
+    private String noteStorageMode = "sp";
+
     private static final String NOTE_PREFERENCE = "notes_preference";
     private static final String NOTE_TITLES_KEY = "note_titles";
     private static final String NOTE_CONTENTS_KEY = "note_contents";
@@ -55,9 +64,19 @@ public class NoteActivity extends AppCompatActivity {
         setContentView(R.layout.activity_note);
 
         initViews();
-        loadNotesFromPreferences();
+        initStorageStrategy();
         setupSpinner();
         setupButtons();
+    }
+
+    private void initStorageStrategy() {
+        if(noteStorageMode.equals(NoteStrategyEnum.SharedPreferences)){
+            // 使用SharedPreferences
+            SharedPreferences prefs = getSharedPreferences("notes_preference", MODE_PRIVATE);
+            noteStorageStrategy = new SharedPreferencesStrategy(prefs);
+        }else if (noteStorageMode.equals(NoteStrategyEnum.SQLite)){
+            // 使用SQLite
+        }
     }
 
     private void initViews() {
@@ -73,6 +92,10 @@ public class NoteActivity extends AppCompatActivity {
      * 下拉框
      */
     private void setupSpinner() {
+        // 从策略中获取数据
+        noteTitles = noteStorageStrategy.getAllNoteTitles();
+        noteContents = noteStorageStrategy.getAllNotes();
+
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 this,
                 android.R.layout.simple_spinner_item,
@@ -129,25 +152,6 @@ public class NoteActivity extends AppCompatActivity {
         if (contentsSet != null) noteContents.addAll(contentsSet);
     }
 
-    private void saveNotesToPreferences() {
-        SharedPreferences sharedPreferences = getSharedPreferences(NOTE_PREFERENCE, MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-
-        Gson gson = new Gson();
-
-        // 保存标题列表（使用LinkedHashSet保持顺序）
-        LinkedHashSet<String> titlesSet = new LinkedHashSet<>(noteTitles);
-        String titlesJson = gson.toJson(titlesSet);
-        editor.putString(NOTE_TITLES_KEY, titlesJson);
-
-        // 保存内容列表（使用LinkedHashSet保持顺序）
-        LinkedHashSet<String> contentsSet = new LinkedHashSet<>(noteContents);
-        String contentsJson = gson.toJson(contentsSet);
-        editor.putString(NOTE_CONTENTS_KEY, contentsJson);
-
-        editor.apply();
-    }
-
     private void setupButtons() {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -181,34 +185,20 @@ public class NoteActivity extends AppCompatActivity {
 
         // 保存当前选中的位置
         int currentPosition = spinnerNotes.getSelectedItemPosition();
-        String currentTitle = currentPosition >= 0 ? noteTitles.get(currentPosition) : null;
 
-        // 检查标题是否已存在
-        int existingIndex = noteTitles.indexOf(title);
-
-        if (existingIndex != -1) {
-            // 更新现有笔记
-            noteContents.set(existingIndex, content);
-        } else {
-            // 添加新笔记
-            noteTitles.add(title);
-            noteContents.add(content);
-        }
-
-        // 保存到SharedPreferences
-        saveNotesToPreferences();
-
+        noteStorageStrategy.saveNote(title, content);
         Toast.makeText(this, "保存成功", Toast.LENGTH_SHORT).show();
 
         // 只刷新数据，不清空输入框，保持当前位置
         refreshDataWithoutResetting();
 
         // 恢复选中位置：如果是更新现有笔记，保持原位置；如果是新建，选中新项
-        if (existingIndex != -1) {
+        List<String> titles = noteStorageStrategy.getAllNoteTitles();
+        if (titles.contains(title)) {
             // 更新操作，保持原位置
             spinnerNotes.setSelection(currentPosition);
         } else {
-            // 新建操作，选中最新添加的项
+            // 新建操作，选中最新最后添加的笔记
             spinnerNotes.setSelection(noteTitles.size() - 1);
         }
     }
@@ -221,10 +211,10 @@ public class NoteActivity extends AppCompatActivity {
         String currentTitle = etNoteTitle.getText().toString();
         String currentContent = etNoteContent.getText().toString();
 
-        // 重新加载数据
-        loadNotesFromPreferences();
-
+        // 更新为最新数据
+        noteContents = noteStorageStrategy.getAllNotes();
         // 刷新Spinner适配器
+        List<String> noteTitles = noteStorageStrategy.getAllNoteTitles();
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 this,
                 android.R.layout.simple_spinner_item,
