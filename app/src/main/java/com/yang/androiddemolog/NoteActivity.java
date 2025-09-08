@@ -21,6 +21,8 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.yang.androiddemolog.strategy.NoteStorageStrategy;
+import com.yang.androiddemolog.strategy.strategyImpl.NotesDbHelper;
+import com.yang.androiddemolog.strategy.strategyImpl.SQLiteStrategy;
 import com.yang.androiddemolog.strategy.strategyImpl.SharedPreferencesStrategy;
 import com.yang.constant.enums.NoteStrategyEnum;
 
@@ -45,7 +47,7 @@ public class NoteActivity extends AppCompatActivity {
     private NoteStorageStrategy noteStorageStrategy;
 
     // 策略标志 SharedPreferences: sp(默认)   SQLite: sl
-    private String noteStorageMode = "sp";
+    private static final String noteStorageMode = "sl";
 
     private static final String NOTE_PREFERENCE = "notes_preference";
     private static final String NOTE_TITLES_KEY = "note_titles";
@@ -76,6 +78,8 @@ public class NoteActivity extends AppCompatActivity {
             noteStorageStrategy = new SharedPreferencesStrategy(prefs);
         }else if (noteStorageMode.equals(NoteStrategyEnum.SQLite)){
             // 使用SQLite
+            NotesDbHelper dbHelper = new NotesDbHelper(this);
+            noteStorageStrategy = new SQLiteStrategy(dbHelper);
         }
     }
 
