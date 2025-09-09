@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
         initViews();
         setupClickListeners();
 
-        // 初始化计时器按钮
+        // 初始化主界面的4个边角按钮
         initTimerAndNoteBtn();
 
         // 数据发送
@@ -115,11 +115,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * 初始化计时器按钮，绑定点击事件
+     * 初始化 MainActivity的四个边角按钮
      */
     private void initTimerAndNoteBtn() {
         btnTimer = findViewById(R.id.btn_timer);
         btnNote = findViewById(R.id.btn_note);
+
+        View btnException = findViewById(R.id.btn_exception);
+
         btnTimer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -131,6 +134,10 @@ public class MainActivity extends AppCompatActivity {
         // 跳转到笔记Activity
         btnNote.setOnClickListener(view ->
                 startActivity(new Intent(MainActivity.this, NoteActivity.class)));
+
+        // 跳转到模拟异常Activity
+        btnException.setOnClickListener(view ->
+                startActivity(new Intent(MainActivity.this, ExceptionActivity.class)));
     }
 
     /**
