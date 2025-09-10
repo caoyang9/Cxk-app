@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button btnIntroduction, btnWhatAreYouDoing, btnWhatAreYouDoingDJ, btnJustBecause;
 
-    private Button btnSwitchLanguage, btnTimer, btnNote;
+    private Button btnSwitchLanguage, btnTimer, btnNote, btnException, btnContentProvider;
 
     private String currentLanguage = "zh";
 
@@ -121,7 +121,8 @@ public class MainActivity extends AppCompatActivity {
         btnTimer = findViewById(R.id.btn_timer);
         btnNote = findViewById(R.id.btn_note);
 
-        View btnException = findViewById(R.id.btn_exception);
+        btnException = findViewById(R.id.btn_exception);
+        btnContentProvider = findViewById(R.id.btn_contentProvider);
 
         btnTimer.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -138,6 +139,9 @@ public class MainActivity extends AppCompatActivity {
         // 跳转到模拟异常Activity
         btnException.setOnClickListener(view ->
                 startActivity(new Intent(MainActivity.this, ExceptionActivity.class)));
+
+        // 跳转到ContentProvider共享SQLite数据Activity
+        btnContentProvider.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, ContentProviderActivity.class)));
     }
 
     /**
