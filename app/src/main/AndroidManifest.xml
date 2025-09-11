@@ -47,6 +47,8 @@
         <activity android:name=".NoteActivity" android:exported="false"/>
         <activity android:name=".ExceptionActivity" android:exported="false"/>
         <activity android:name=".ContentProviderActivity" android:exported="false"/>
+        <activity android:name=".mmiActivity.MMIActivity" android:exported="false"/>
+        <activity android:name=".mmiActivity.BrightnessActivity" android:exported="false"/>
 
         <service android:name="com.yang.service.MusicService"/>
         <service
