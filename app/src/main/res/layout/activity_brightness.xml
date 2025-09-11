@@ -18,33 +18,33 @@
             tools:layout_editor_absoluteY="312dp">
 
             <Button
-                android:id="@+id/btn1"
+                android:id="@+id/btn_lowestBrightness"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:layout_weight="1"
                 android:backgroundTint="#4CAF50"
-                android:text="绿"
+                android:text="最低亮度"
                 android:textSize="16sp" />
 
             <Button
-                android:id="@+id/btn2"
+                android:id="@+id/btn_gradientBrightness"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:layout_weight="1"
                 android:backgroundTint="#F44336"
-                android:text="红"
+                android:text="自动变化"
                 android:textSize="16sp" />
 
             <Button
-                android:id="@+id/btn3"
+                android:id="@+id/btn_highestBright"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:layout_weight="1"
                 android:backgroundTint="#2196F3"
-                android:text="蓝"
+                android:text="最高亮度"
                 android:textSize="16sp" />
 
         </LinearLayout>

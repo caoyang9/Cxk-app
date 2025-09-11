@@ -3,8 +3,10 @@ package com.yang.androiddemolog.mmiActivity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +14,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.yang.androiddemolog.R;
 
 public class BrightnessActivity extends AppCompatActivity {
+
+    private Button lowestBrightness, gradientBrightness, highestBright;
 
     private Handler brightnessHandler;
     private Runnable brightnessRunnable;
@@ -28,6 +32,8 @@ public class BrightnessActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_brightness);
+
+        initBtn();
 
         brightnessHandler = new Handler(Looper.getMainLooper());
         setupBrightCycle();
@@ -56,6 +62,48 @@ public class BrightnessActivity extends AppCompatActivity {
             }
         };
         brightnessHandler.post(brightnessRunnable);
+    }
+
+    private void initBtn() {
+        lowestBrightness = findViewById(R.id.btn_lowestBrightness);
+        gradientBrightness = findViewById(R.id.btn_gradientBrightness);
+        highestBright = findViewById(R.id.btn_highestBright);
+
+        lowestBrightness.setOnClickListener(v -> toLowestBrightness());
+        gradientBrightness.setOnClickListener(v -> toGradientBrightness());
+        highestBright.setOnClickListener(v -> toHighestBright());
+    }
+
+    private void toLowestBrightness() {
+        if(brightnessHandler != null && brightnessRunnable != null){
+            brightnessHandler.removeCallbacks(brightnessRunnable);
+        }
+        // 获取当前窗口
+        Window window = getWindow();
+        // 获取当前需要设置的亮度
+        float curBrightness = brightness[brightness.length - 1];
+        // 设置窗口亮度
+        WindowManager.LayoutParams attributes = window.getAttributes();
+        attributes.screenBrightness = curBrightness;
+        window.setAttributes(attributes);
+    }
+
+    private void toGradientBrightness() {
+        setupBrightCycle();
+    }
+
+    private void toHighestBright() {
+        if(brightnessHandler != null && brightnessRunnable != null){
+            brightnessHandler.removeCallbacks(brightnessRunnable);
+        }
+        // 获取当前窗口
+        Window window = getWindow();
+        // 获取当前需要设置的亮度
+        float curBrightness = brightness[0];
+        // 设置窗口亮度
+        WindowManager.LayoutParams attributes = window.getAttributes();
+        attributes.screenBrightness = curBrightness;
+        window.setAttributes(attributes);
     }
 
     /**
