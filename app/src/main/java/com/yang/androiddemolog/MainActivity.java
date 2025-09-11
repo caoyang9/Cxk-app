@@ -29,6 +29,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
+import com.yang.androiddemolog.mmiActivity.MMIActivity;
 import com.yang.constant.ChannelConstants;
 import com.yang.service.MyForegroundService;
 
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button btnIntroduction, btnWhatAreYouDoing, btnWhatAreYouDoingDJ, btnJustBecause;
 
-    private Button btnSwitchLanguage, btnTimer, btnNote, btnException, btnContentProvider;
+    private Button btnSwitchLanguage, btnTimer, btnNote, btnException, btnContentProvider, btnMMI;
 
     private String currentLanguage = "zh";
 
@@ -91,6 +92,9 @@ public class MainActivity extends AppCompatActivity {
 
         // 初始化主界面的4个边角按钮
         initTimerAndNoteBtn();
+
+        // 初始化进入MMI界面的按钮
+        initMMIBtn();
 
         // 数据发送
         tvResult = findViewById(R.id.tv_result);
@@ -247,6 +251,17 @@ public class MainActivity extends AppCompatActivity {
         btnWhatAreYouDoing = findViewById(R.id.btn_whatAreYouDoing);
         btnJustBecause = findViewById(R.id.btn_justBecause);
         btnWhatAreYouDoingDJ = findViewById(R.id.btn_whatAreYouDoingDJ);
+    }
+
+    private void initMMIBtn(){
+        btnMMI = findViewById(R.id.btn_mmi);
+        btnMMI.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MMIActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     /**
