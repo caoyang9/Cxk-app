@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_gravity="center">
+
+    <!-- 可以拖拽的图片-->
+    <ImageView
+        android:id="@+id/draggableImage"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="88dp"
+        android:src="@drawable/cxk4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="84dp"
+        android:text="将图片移动到下方的方框中"
+        android:textSize="17dp"
+        app:layout_constraintBaseline_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="48dp" />
+
+    <FrameLayout
+        android:id="@+id/dropArea"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="388dp"
+        android:background="@drawable/drop_area_border"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="536dp"
+        android:text="图片放置区域"
+        android:textColor="#666"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
