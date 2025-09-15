@@ -32,6 +32,11 @@ public class TouchActivity extends AppCompatActivity {
     private FrameLayout dropArea;
 
     /**
+     * 根视图
+     */
+    private ViewGroup rootView;
+
+    /**
      * 图片的初始位置
      */
     private float initX, initY;
@@ -49,6 +54,7 @@ public class TouchActivity extends AppCompatActivity {
 
         draggableImage = findViewById(R.id.draggableImage);
         dropArea = findViewById(R.id.dropArea);
+        rootView = findViewById(android.R.id.content);
 
         // 设置触摸监听器
         draggableImage.setOnTouchListener(new View.OnTouchListener() {
@@ -64,6 +70,15 @@ public class TouchActivity extends AppCompatActivity {
                         // 计算触点与左上角的偏移量
                         dX = view.getX() - event.getRawX();
                         dY = view.getY() - event.getRawY();
+
+                        // 将图片移到根容器，确保在最上层
+                        if (view.getParent() != rootView) {
+                            ((ViewGroup) view.getParent()).removeView(view);
+                            rootView.addView(view);
+                            // 设置位置
+                            view.setX(initX);
+                            view.setY(initY);
+                        }
                         break;
                     case MotionEvent.ACTION_MOVE:
                         // 移动图片
@@ -88,7 +103,6 @@ public class TouchActivity extends AppCompatActivity {
                             if (view.getParent() != dropArea) {
                                 ((ViewGroup) view.getParent()).removeView(view);
                                 dropArea.addView(view);
-
                                 // 居中显示
                                 FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(
                                         FrameLayout.LayoutParams.WRAP_CONTENT,
