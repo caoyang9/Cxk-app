@@ -18,6 +18,9 @@ public class MMIActivity extends AppCompatActivity {
     // 定义模拟亮度调节按钮，图片管理按钮，触摸移动按钮
     private Button brightnessBtn, imageBtn, touchBtn;
 
+    // 定义按键、闪光灯、振动按钮
+    private Button vibratorBtn;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,8 +35,12 @@ public class MMIActivity extends AppCompatActivity {
         imageBtn = findViewById(R.id.btn_image);
         touchBtn = findViewById(R.id.btn_touchToArea);
 
+        vibratorBtn = findViewById(R.id.btn_vibrator);
+
         brightnessBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, BrightnessActivity.class)));
         imageBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, ImageActivity.class)));
         touchBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, TouchActivity.class)));
+
+        vibratorBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, VibratorActivity.class)));
     }
 }

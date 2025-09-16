@@ -21,6 +21,9 @@
     <!-- 申请WRITE_SETTINGS的权限 -->
     <uses-permission android:name="android.permission.WRITE_SETTINGS" tools:ignore="ProtectedPermissions" />
 
+    <!-- 开启手机振动的权限 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -54,6 +57,7 @@
         <activity android:name=".mmiActivity.BrightnessActivity" android:exported="false"/>
         <activity android:name=".mmiActivity.ImageActivity" android:exported="false"/>
         <activity android:name=".mmiActivity.TouchActivity" android:exported="false"/>
+        <activity android:name=".mmiActivity.VibratorActivity" android:exported="false"/>
 
         <service android:name="com.yang.service.MusicService"/>
         <service
