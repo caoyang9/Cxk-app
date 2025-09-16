@@ -58,6 +58,7 @@
         <activity android:name=".mmiActivity.ImageActivity" android:exported="false"/>
         <activity android:name=".mmiActivity.TouchActivity" android:exported="false"/>
         <activity android:name=".mmiActivity.VibratorActivity" android:exported="false"/>
+        <activity android:name=".mmiActivity.ColorControlActivity" android:exported="false"/>
 
         <service android:name="com.yang.service.MusicService"/>
         <service

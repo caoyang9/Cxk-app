@@ -19,7 +19,7 @@ public class MMIActivity extends AppCompatActivity {
     private Button brightnessBtn, imageBtn, touchBtn;
 
     // 定义按键、闪光灯、振动按钮
-    private Button vibratorBtn;
+    private Button vibratorBtn, keyBtn;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -36,11 +36,13 @@ public class MMIActivity extends AppCompatActivity {
         touchBtn = findViewById(R.id.btn_touchToArea);
 
         vibratorBtn = findViewById(R.id.btn_vibrator);
+        keyBtn = findViewById(R.id.btn_key);
 
         brightnessBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, BrightnessActivity.class)));
         imageBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, ImageActivity.class)));
         touchBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, TouchActivity.class)));
 
         vibratorBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, VibratorActivity.class)));
+        keyBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, ColorControlActivity.class)));
     }
 }
