@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
@@ -23,6 +27,9 @@
 
     <!-- 开启手机振动的权限 -->
     <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!-- 开启闪光灯的权限 -->
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -59,6 +66,7 @@
         <activity android:name=".mmiActivity.TouchActivity" android:exported="false"/>
         <activity android:name=".mmiActivity.VibratorActivity" android:exported="false"/>
         <activity android:name=".mmiActivity.ColorControlActivity" android:exported="false"/>
+        <activity android:name=".mmiActivity.FlashActivity" android:exported="false"/>
 
         <service android:name="com.yang.service.MusicService"/>
         <service
