@@ -205,6 +205,9 @@ public class MainActivity2 extends AppCompatActivity {
 //                startActivity(new Intent(MainActivity2.this, WhatAreYouDoingDJActivity2.class)));
         findViewById(R.id.btn2_6_3).setOnClickListener(v ->
                 startActivity(new Intent(MainActivity2.this, SenderActivity.class)));
+        // card7
+        findViewById(R.id.btn2_7_1).setOnClickListener(v ->
+                startActivity(new Intent(MainActivity2.this, TimerActivity.class)));
     }
 
     private void toggleLanguage() {
