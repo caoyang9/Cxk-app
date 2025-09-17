@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:id="@+id/service_buttons_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="272dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="DuplicateIds">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <Button
+                android:id="@+id/btn2_start_service"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:backgroundTint="#2196F3"
+                android:elevation="4dp"
+                android:stateListAnimator="@null"
+                android:text="StartService"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/btn2_bind_service"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#2196F3"
+                android:elevation="4dp"
+                android:stateListAnimator="@null"
+                android:text="BindService"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <Button
+                android:id="@+id/btn2_stop_service"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:backgroundTint="#2196F3"
+                android:elevation="4dp"
+                android:stateListAnimator="@null"
+                android:text="StopService"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/btn2_unbind_service"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#2196F3"
+                android:elevation="4dp"
+                android:stateListAnimator="@null"
+                android:text="UnbindService"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -76,10 +76,17 @@
         <activity android:name=".uiActivity.RapActivity2" android:exported="false"/>
         <activity android:name=".interaction.BasketballActivity2" android:exported="false"/>
         <activity android:name=".interaction.IntroductionActivity2" android:exported="false"/>
+        <activity android:name=".serviceActivity.ForegroundServiceActivity" android:exported="false"/>
 
         <service android:name="com.yang.service.MusicService"/>
         <service
             android:name="com.yang.service.MyForegroundService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="mediaPlayback" />
+
+        <service
+            android:name="com.yang.androiddemolog.service2.ForegroundService2"
             android:enabled="true"
             android:exported="false"
             android:foregroundServiceType="mediaPlayback" />

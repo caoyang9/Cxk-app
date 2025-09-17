@@ -1,8 +1,11 @@
 package com.yang.androiddemolog;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,9 +19,11 @@ import com.yang.androiddemolog.environmentanddebug.HelloWorldActivity;
 import com.yang.androiddemolog.environmentanddebug.LogActivity;
 import com.yang.androiddemolog.interaction.BasketballActivity2;
 import com.yang.androiddemolog.interaction.IntroductionActivity2;
+import com.yang.androiddemolog.serviceActivity.ForegroundServiceActivity;
 import com.yang.androiddemolog.uiActivity.DanceActivity2;
 import com.yang.androiddemolog.uiActivity.RapActivity2;
 import com.yang.androiddemolog.uiActivity.SingActivity2;
+import com.yang.constant.ChannelConstants;
 
 import java.util.HashMap;
 import java.util.Locale;
@@ -48,6 +53,8 @@ public class MainActivity2 extends AppCompatActivity {
         // 初始化映射关系
         initMappings();
 
+        // 创建ServiceChannel
+        createNotificationChannel();
         // 设置点击监听器
         setupClickListeners();
 
@@ -168,6 +175,9 @@ public class MainActivity2 extends AppCompatActivity {
                 startActivity(new Intent(MainActivity2.this, IntroductionActivity2.class)));
         findViewById(R.id.btn2_4_2).setOnClickListener(v ->
                 startActivity(new Intent(MainActivity2.this, BasketballActivity2.class)));
+        // card5
+        findViewById(R.id.btn2_5_1).setOnClickListener(v ->
+                startActivity(new Intent(MainActivity2.this, ForegroundServiceActivity.class)));
     }
 
     private void toggleLanguage() {
@@ -231,6 +241,23 @@ public class MainActivity2 extends AppCompatActivity {
             btn2SwitchLanguage.setText(getString(R.string.trans3));
         } else {
             btn2SwitchLanguage.setText(getString(R.string.trans3));
+        }
+    }
+
+    /**
+     * 创建Service的NotificationChannel
+     */
+    private void createNotificationChannel() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = "MyForegroundService";
+            String description = "Channel for foreground service notifications";
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+
+            NotificationChannel channel = new NotificationChannel(ChannelConstants.SERVICE_CHANNEL_ID, name, importance);
+            channel.setDescription(description);
+
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
         }
     }
 }
