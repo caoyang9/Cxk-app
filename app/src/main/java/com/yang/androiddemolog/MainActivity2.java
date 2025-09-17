@@ -166,6 +166,8 @@ public class MainActivity2 extends AppCompatActivity {
         // card4
         findViewById(R.id.btn2_4_1).setOnClickListener(v ->
                 startActivity(new Intent(MainActivity2.this, IntroductionActivity2.class)));
+        findViewById(R.id.btn2_4_2).setOnClickListener(v ->
+                startActivity(new Intent(MainActivity2.this, BasketballActivity2.class)));
     }
 
     private void toggleLanguage() {

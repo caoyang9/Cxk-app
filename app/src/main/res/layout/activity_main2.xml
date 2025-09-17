@@ -364,7 +364,7 @@
                             android:layout_weight="1"
                             android:backgroundTint="#E91E63"
                             android:elevation="2dp"
-                            android:text="陀螺仪"
+                            android:text="打篮球"
                             android:textColor="#FFFFFF"
                             android:textSize="14sp" />
 
