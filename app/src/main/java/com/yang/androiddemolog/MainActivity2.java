@@ -21,6 +21,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.yang.androiddemolog.activityActivity.WhatAreYouDoingActivity2;
+import com.yang.androiddemolog.broadcastActivity.SenderActivity;
 import com.yang.androiddemolog.environmentanddebug.HelloWorldActivity;
 import com.yang.androiddemolog.environmentanddebug.LogActivity;
 import com.yang.androiddemolog.interaction.BasketballActivity2;
@@ -200,10 +201,10 @@ public class MainActivity2 extends AppCompatActivity {
         // card6
 //        findViewById(R.id.btn2_6_1).setOnClickListener(v ->
 //                startActivity(new Intent(MainActivity2.this, ForegroundServiceActivity.class)));
-        findViewById(R.id.btn2_6_2).setOnClickListener(v ->
-                startActivity(new Intent(MainActivity2.this, WhatAreYouDoingDJActivity2.class)));
+//        findViewById(R.id.btn2_6_2).setOnClickListener(v ->
+//                startActivity(new Intent(MainActivity2.this, WhatAreYouDoingDJActivity2.class)));
         findViewById(R.id.btn2_6_3).setOnClickListener(v ->
-                startActivity(new Intent(MainActivity2.this, WhatAreYouDoingDJActivity2.class)));
+                startActivity(new Intent(MainActivity2.this, SenderActivity.class)));
     }
 
     private void toggleLanguage() {
