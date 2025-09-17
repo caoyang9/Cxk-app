@@ -12,6 +12,7 @@ import android.util.Log;
 import androidx.core.app.NotificationCompat;
 
 import com.yang.androiddemolog.MainActivity;
+import com.yang.androiddemolog.MainActivity2;
 import com.yang.androiddemolog.R;
 import com.yang.constant.ChannelConstants;
 
@@ -30,7 +31,7 @@ public class BootCompletedReceiver extends BroadcastReceiver {
             createNotificationChannel(context);
 
             // 创建点击通知后启动Activity的Intent
-            Intent activityIntent = new Intent(context, MainActivity.class);
+            Intent activityIntent = new Intent(context, MainActivity2.class);
             PendingIntent pendingIntent = PendingIntent.getActivity(
                     context,
                     0,
