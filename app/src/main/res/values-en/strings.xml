@@ -63,4 +63,51 @@
     <string name="card1btn1">Hello</string>
     <string name="card1btn2">Log</string>
     <string name="card1btn3">Null</string>
+
+    <string name="card2">Activity</string>
+    <string name="card2btn1">Music</string>
+    <string name="card2btn2">Null</string>
+    <string name="card2btn3">Null</string>
+
+    <string name="card3">UI Layout</string>
+    <string name="card3btn1">Sing</string>
+    <string name="card3btn2">Dance</string>
+    <string name="card3btn3">Rap</string>
+
+    <string name="card4">Component interaction</string>
+    <string name="card4btn1">Dialog </string>
+    <string name="card4btn2">Ball</string>
+    <string name="card4btn3">Null</string>
+
+    <string name="card5">Service</string>
+    <string name="card5btn1">Notice</string>
+    <string name="card5btn2">Music</string>
+    <string name="card5btn3">Null</string>
+
+    <string name="card6">Broadcast</string>
+    <string name="card6btn1">ON</string>
+    <string name="card6btn2">Net</string>
+    <string name="card6btn3">DIY</string>
+
+    <string name="card7">synchronized</string>
+    <string name="card7btn1">Timer</string>
+    <string name="card7btn2">Null</string>
+    <string name="card7btn3">Null</string>
+
+    <string name="card8">Database</string>
+    <string name="card8btn1">SP</string>
+    <string name="card8btn2">SQLite</string>
+    <string name="card8btn3">Null</string>
+
+    <string name="card9">Exception</string>
+    <string name="card9btn1">ANR</string>
+    <string name="card9btn2">Crash</string>
+    <string name="card9btn3">Exc</string>
+
+    <string name="card10">ContentProvider</string>
+    <string name="card10btn1">CRUD</string>
+    <string name="card10btn2">Null</string>
+    <string name="card10btn3">Null</string>
+
+    <string name="nextPage">Next</string>
 </resources>

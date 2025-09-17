@@ -63,4 +63,51 @@
     <string name="card1btn1">Hello</string>
     <string name="card1btn2">日志</string>
     <string name="card1btn3">待开放</string>
+
+    <string name="card2">Activity</string>
+    <string name="card2btn1">放音乐</string>
+    <string name="card2btn2">待开放</string>
+    <string name="card2btn3">待开放</string>
+
+    <string name="card3">UI 控件和布局</string>
+    <string name="card3btn1">CXK唱</string>
+    <string name="card3btn2">CXK跳</string>
+    <string name="card3btn3">Rap</string>
+
+    <string name="card4">组件交互</string>
+    <string name="card4btn1">对话框</string>
+    <string name="card4btn2">打篮球</string>
+    <string name="card4btn3">待开放</string>
+
+    <string name="card5">Service</string>
+    <string name="card5btn1">长通知</string>
+    <string name="card5btn2">后台音</string>
+    <string name="card5btn3">待开放</string>
+
+    <string name="card6">Broadcast</string>
+    <string name="card6btn1">监开机</string>
+    <string name="card6btn2">监网络</string>
+    <string name="card6btn3">自定义</string>
+
+    <string name="card7">异步处理</string>
+    <string name="card7btn1">计时器</string>
+    <string name="card7btn2">待开放</string>
+    <string name="card7btn3">待开放</string>
+
+    <string name="card8">数据存储</string>
+    <string name="card8btn1">SP存储</string>
+    <string name="card8btn2">SQLite</string>
+    <string name="card8btn3">待开放</string>
+
+    <string name="card9">异常处理</string>
+    <string name="card9btn1">ANR</string>
+    <string name="card9btn2">Crash</string>
+    <string name="card9btn3">异常</string>
+
+    <string name="card10">ContentProvider</string>
+    <string name="card10btn1">CRUD</string>
+    <string name="card10btn2">待开放</string>
+    <string name="card10btn3">待开放</string>
+
+    <string name="nextPage">下一章</string>
 </resources>

@@ -138,7 +138,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Activity"
+                            android:text="@string/card2"
                             android:textColor="#333333"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -172,7 +172,7 @@
                             android:layout_weight="1"
                             android:backgroundTint="#00BCD4"
                             android:elevation="2dp"
-                            android:text="放音乐"
+                            android:text="@string/card2btn1"
                             android:textColor="#FFFFFF"
                             android:textSize="14sp" />
 
@@ -184,7 +184,7 @@
                             android:layout_weight="1"
                             android:backgroundTint="#8BC34A"
                             android:elevation="2dp"
-                            android:text="待开放"
+                            android:text="@string/card2btn2"
                             android:textColor="#FFFFFF"
                             android:textSize="14sp" />
 
@@ -195,7 +195,7 @@
                             android:layout_weight="1"
                             android:backgroundTint="#FF5722"
                             android:elevation="2dp"
-                            android:text="待开放"
+                            android:text="@string/card2btn3"
                             android:textColor="#FFFFFF"
                             android:textSize="14sp" />
                     </LinearLayout>
@@ -228,7 +228,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="UI 控件和布局"
+                            android:text="@string/card3"
                             android:textColor="#333333"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -262,7 +262,7 @@
                             android:layout_weight="1"
                             android:backgroundTint="#009688"
                             android:elevation="2dp"
-                            android:text="CXK唱"
+                            android:text="@string/card3btn1"
                             android:textColor="#FFFFFF"
                             android:textSize="14sp" />
 
@@ -274,7 +274,7 @@
                             android:layout_weight="1"
                             android:backgroundTint="#FF9800"
                             android:elevation="2dp"
-                            android:text="CXK跳"
+                            android:text="@string/card3btn2"
                             android:textColor="#FFFFFF"
                             android:textSize="14sp" />
 
@@ -285,7 +285,7 @@
                             android:layout_weight="1"
                             android:backgroundTint="#795548"
                             android:elevation="2dp"
-                            android:text="Rap"
+                            android:text="@string/card3btn3"
                             android:textColor="#FFFFFF"
                             android:textSize="14sp" />
                     </LinearLayout>
@@ -318,7 +318,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="组件交互"
+                            android:text="@string/card4"
                             android:textColor="#333333"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -352,7 +352,7 @@
                             android:layout_weight="1"
                             android:backgroundTint="#607D8B"
                             android:elevation="2dp"
-                            android:text="对话框"
+                            android:text="@string/card4btn1"
                             android:textColor="#FFFFFF"
                             android:textSize="14sp" />
 
@@ -364,7 +364,7 @@
                             android:layout_weight="1"
                             android:backgroundTint="#E91E63"
                             android:elevation="2dp"
-                            android:text="打篮球"
+                            android:text="@string/card4btn2"
                             android:textColor="#FFFFFF"
                             android:textSize="14sp" />
 
@@ -375,7 +375,7 @@
                             android:layout_weight="1"
                             android:backgroundTint="#3F51B5"
                             android:elevation="2dp"
-                            android:text="待开放"
+                            android:text="@string/card4btn3"
                             android:textColor="#FFFFFF"
                             android:textSize="14sp" />
                     </LinearLayout>
@@ -408,7 +408,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Service"
+                            android:text="@string/card5"
                             android:textColor="#333333"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -442,7 +442,7 @@
                             android:layout_weight="1"
                             android:backgroundTint="#00BCD4"
                             android:elevation="2dp"
-                            android:text="长通知"
+                            android:text="@string/card5btn1"
                             android:textColor="#FFFFFF"
                             android:textSize="14sp" />
 
@@ -454,7 +454,7 @@
                             android:layout_weight="1"
                             android:backgroundTint="#8BC34A"
                             android:elevation="2dp"
-                            android:text="后台音"
+                            android:text="@string/card5btn2"
                             android:textColor="#FFFFFF"
                             android:textSize="14sp" />
 
@@ -465,7 +465,7 @@
                             android:layout_weight="1"
                             android:backgroundTint="#FF5722"
                             android:elevation="2dp"
-                            android:text="待开放"
+                            android:text="@string/card5btn3"
                             android:textColor="#FFFFFF"
                             android:textSize="14sp" />
                     </LinearLayout>
@@ -498,7 +498,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Broadcast"
+                            android:text="@string/card6"
                             android:textColor="#333333"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -532,7 +532,7 @@
                             android:layout_weight="1"
                             android:backgroundTint="#00BCD4"
                             android:elevation="2dp"
-                            android:text="监开机"
+                            android:text="@string/card6btn1"
                             android:textColor="#FFFFFF"
                             android:textSize="14sp" />
 
@@ -544,7 +544,7 @@
                             android:layout_weight="1"
                             android:backgroundTint="#8BC34A"
                             android:elevation="2dp"
-                            android:text="监网络"
+                            android:text="@string/card6btn2"
                             android:textColor="#FFFFFF"
                             android:textSize="14sp" />
 
@@ -555,7 +555,7 @@
                             android:layout_weight="1"
                             android:backgroundTint="#FF5722"
                             android:elevation="2dp"
-                            android:text="自定义"
+                            android:text="@string/card6btn3"
                             android:textColor="#FFFFFF"
                             android:textSize="14sp" />
                     </LinearLayout>
@@ -588,7 +588,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="异步处理"
+                            android:text="@string/card7"
                             android:textColor="#333333"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -622,7 +622,7 @@
                             android:layout_weight="1"
                             android:backgroundTint="#00BCD4"
                             android:elevation="2dp"
-                            android:text="计时器"
+                            android:text="@string/card7btn1"
                             android:textColor="#FFFFFF"
                             android:textSize="14sp" />
 
@@ -634,7 +634,7 @@
                             android:layout_weight="1"
                             android:backgroundTint="#8BC34A"
                             android:elevation="2dp"
-                            android:text="待开放"
+                            android:text="@string/card7btn2"
                             android:textColor="#FFFFFF"
                             android:textSize="14sp" />
 
@@ -645,7 +645,7 @@
                             android:layout_weight="1"
                             android:backgroundTint="#FF5722"
                             android:elevation="2dp"
-                            android:text="待开放"
+                            android:text="@string/card7btn3"
                             android:textColor="#FFFFFF"
                             android:textSize="14sp" />
                     </LinearLayout>
@@ -678,7 +678,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="数据存储"
+                            android:text="@string/card8"
                             android:textColor="#333333"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -712,7 +712,7 @@
                             android:layout_weight="1"
                             android:backgroundTint="#00BCD4"
                             android:elevation="2dp"
-                            android:text="SP存储"
+                            android:text="@string/card8btn1"
                             android:textColor="#FFFFFF"
                             android:textSize="14sp" />
 
@@ -724,7 +724,7 @@
                             android:layout_weight="1"
                             android:backgroundTint="#8BC34A"
                             android:elevation="2dp"
-                            android:text="SQLite"
+                            android:text="@string/card8btn2"
                             android:textColor="#FFFFFF"
                             android:textSize="14sp" />
 
@@ -735,7 +735,7 @@
                             android:layout_weight="1"
                             android:backgroundTint="#FF5722"
                             android:elevation="2dp"
-                            android:text="待开放"
+                            android:text="@string/card8btn3"
                             android:textColor="#FFFFFF"
                             android:textSize="14sp" />
                     </LinearLayout>
@@ -768,7 +768,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="异常处理"
+                            android:text="@string/card9"
                             android:textColor="#333333"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -802,7 +802,7 @@
                             android:layout_weight="1"
                             android:backgroundTint="#00BCD4"
                             android:elevation="2dp"
-                            android:text="ANR"
+                            android:text="@string/card9btn1"
                             android:textColor="#FFFFFF"
                             android:textSize="14sp" />
 
@@ -814,7 +814,7 @@
                             android:layout_weight="1"
                             android:backgroundTint="#8BC34A"
                             android:elevation="2dp"
-                            android:text="Crash"
+                            android:text="@string/card9btn2"
                             android:textColor="#FFFFFF"
                             android:textSize="14sp" />
 
@@ -825,7 +825,7 @@
                             android:layout_weight="1"
                             android:backgroundTint="#FF5722"
                             android:elevation="2dp"
-                            android:text="异常"
+                            android:text="@string/card9btn3"
                             android:textColor="#FFFFFF"
                             android:textSize="14sp" />
                     </LinearLayout>
@@ -858,7 +858,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="ContentProvider"
+                            android:text="@string/card10"
                             android:textColor="#333333"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -892,7 +892,7 @@
                             android:layout_weight="1"
                             android:backgroundTint="#00BCD4"
                             android:elevation="2dp"
-                            android:text="CRUD"
+                            android:text="@string/card10btn1"
                             android:textColor="#FFFFFF"
                             android:textSize="14sp" />
 
@@ -904,7 +904,7 @@
                             android:layout_weight="1"
                             android:backgroundTint="#8BC34A"
                             android:elevation="2dp"
-                            android:text="待开放"
+                            android:text="@string/card10btn2"
                             android:textColor="#FFFFFF"
                             android:textSize="14sp" />
 
@@ -915,7 +915,7 @@
                             android:layout_weight="1"
                             android:backgroundTint="#FF5722"
                             android:elevation="2dp"
-                            android:text="待开放"
+                            android:text="@string/card10btn3"
                             android:textColor="#FFFFFF"
                             android:textSize="14sp" />
                     </LinearLayout>
@@ -953,7 +953,7 @@
             android:layout_marginStart="8dp"
             android:backgroundTint="#4CAF50"
             android:elevation="4dp"
-            android:text="下一章"
+            android:text="@string/nextPage"
             android:textAllCaps="false"
             android:textColor="#FFFFFF"
             android:textSize="16sp"
