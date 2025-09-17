@@ -74,6 +74,8 @@
         <activity android:name=".uiActivity.SingActivity2" android:exported="false"/>
         <activity android:name=".uiActivity.DanceActivity2" android:exported="false"/>
         <activity android:name=".uiActivity.RapActivity2" android:exported="false"/>
+        <activity android:name=".interaction.BasketballActivity2" android:exported="false"/>
+        <activity android:name=".interaction.IntroductionActivity2" android:exported="false"/>
 
         <service android:name="com.yang.service.MusicService"/>
         <service

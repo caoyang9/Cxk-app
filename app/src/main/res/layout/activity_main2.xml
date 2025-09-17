@@ -345,19 +345,19 @@
                         android:background="#F8F9FA">
 
                         <Button
-                            android:id="@+id/btnAccelerometer"
+                            android:id="@+id/btn2_4_1"
                             android:layout_width="0dp"
                             android:layout_height="49dp"
                             android:layout_marginEnd="8dp"
                             android:layout_weight="1"
                             android:backgroundTint="#607D8B"
                             android:elevation="2dp"
-                            android:text="加速度计"
+                            android:text="对话框"
                             android:textColor="#FFFFFF"
                             android:textSize="14sp" />
 
                         <Button
-                            android:id="@+id/btnGyroscope"
+                            android:id="@+id/btn2_4_2"
                             android:layout_width="0dp"
                             android:layout_height="49dp"
                             android:layout_marginEnd="8dp"
@@ -369,7 +369,7 @@
                             android:textSize="14sp" />
 
                         <Button
-                            android:id="@+id/btnCompass"
+                            android:id="@+id/btn2_4_3"
                             android:layout_width="0dp"
                             android:layout_height="49dp"
                             android:layout_weight="1"

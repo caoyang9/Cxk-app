@@ -14,6 +14,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.yang.androiddemolog.activityActivity.WhatAreYouDoingActivity2;
 import com.yang.androiddemolog.environmentanddebug.HelloWorldActivity;
 import com.yang.androiddemolog.environmentanddebug.LogActivity;
+import com.yang.androiddemolog.interaction.BasketballActivity2;
+import com.yang.androiddemolog.interaction.IntroductionActivity2;
 import com.yang.androiddemolog.uiActivity.DanceActivity2;
 import com.yang.androiddemolog.uiActivity.RapActivity2;
 import com.yang.androiddemolog.uiActivity.SingActivity2;
@@ -161,6 +163,9 @@ public class MainActivity2 extends AppCompatActivity {
                 startActivity(new Intent(MainActivity2.this, DanceActivity2.class)));
         findViewById(R.id.btn2_3_3).setOnClickListener(v ->
                 startActivity(new Intent(MainActivity2.this, RapActivity2.class)));
+        // card4
+        findViewById(R.id.btn2_4_1).setOnClickListener(v ->
+                startActivity(new Intent(MainActivity2.this, IntroductionActivity2.class)));
     }
 
     private void toggleLanguage() {
