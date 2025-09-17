@@ -57,4 +57,10 @@
     <string name="title_empty">标题不能为空</string>
     <string name="default_note_title">无标题笔记</string>
     <string name="add">+</string>
+
+    <!-- 重构后的主界面中文描述 -->
+    <string name="card1">环境和调试</string>
+    <string name="card1btn1">Hello</string>
+    <string name="card1btn2">日志</string>
+    <string name="card1btn3">待开放</string>
 </resources>

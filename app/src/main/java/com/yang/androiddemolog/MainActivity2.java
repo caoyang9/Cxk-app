@@ -1,8 +1,11 @@
 package com.yang.androiddemolog;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -16,9 +19,12 @@ import com.yang.androiddemolog.uiActivity.RapActivity2;
 import com.yang.androiddemolog.uiActivity.SingActivity2;
 
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 public class MainActivity2 extends AppCompatActivity {
+    private String currentLanguage = "zh";
+    private Button btn2SwitchLanguage;
     private final Map<Integer, Integer> arrowToContentMap = new HashMap<>();
     private final Map<Integer, ImageView> arrowViewMap = new HashMap<>();
     private final Map<Integer, View> contentViewMap = new HashMap<>();
@@ -28,6 +34,15 @@ public class MainActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
+        // 获取当前应用语言
+        currentLanguage = getSavedLanguage();
+        // 定位语言转换按钮
+        btn2SwitchLanguage = findViewById(R.id.btn2SwitchLanguage);
+        // 更新按钮文本
+        updateSwitchButtonText();
+        // 切换应用语言逻辑
+        btn2SwitchLanguage.setOnClickListener(v -> switchLanguage());
+
         // 初始化映射关系
         initMappings();
 
@@ -35,7 +50,6 @@ public class MainActivity2 extends AppCompatActivity {
         setupClickListeners();
 
         // 设置底部按钮
-        findViewById(R.id.btnLanguage2).setOnClickListener(v -> toggleLanguage());
         findViewById(R.id.btnNext2).setOnClickListener(v -> goToNextChapter());
 
         setupFunctionButtons();
@@ -159,5 +173,57 @@ public class MainActivity2 extends AppCompatActivity {
 
     private void showToast(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
+
+    /**
+     * 获取当前应用语言
+     * @return
+     */
+    private String getSavedLanguage() {
+        SharedPreferences preferences = getSharedPreferences("AppSettings", MODE_PRIVATE);
+        return preferences.getString("language", "zh");
+    }
+
+    /**
+     * 切换语言
+     */
+    private void switchLanguage() {
+        if(currentLanguage.equals("zh")){
+            setAppLanguage("en");
+            currentLanguage = "en";
+        }else {
+            setAppLanguage("zh");
+            currentLanguage = "zh";
+        }
+        // 重启Activity
+        recreate();
+    }
+
+    /**
+     * 设置应用语言
+     * @param languageCode
+     */
+    private void setAppLanguage(String languageCode) {
+        Locale locale = new Locale(languageCode);
+        Locale.setDefault(locale);
+
+        Configuration config = new Configuration();
+        config.setLocale(locale);
+
+        getResources().updateConfiguration(config, getResources().getDisplayMetrics());
+
+        // 保存语言设置到SharedPreference
+        SharedPreferences preferences = getSharedPreferences("AppSettings", MODE_PRIVATE);
+        SharedPreferences.Editor edit = preferences.edit();
+        edit.putString("language", languageCode);
+        edit.apply();
+    }
+
+    private void updateSwitchButtonText() {
+        if (currentLanguage.equals("zh")) {
+            btn2SwitchLanguage.setText(getString(R.string.trans3));
+        } else {
+            btn2SwitchLanguage.setText(getString(R.string.trans3));
+        }
     }
 }

@@ -24,7 +24,7 @@
     <string name="trans0">Hello, this is data from MainActivity</string>
     <string name="trans1">kunkun hot:</string>
     <string name="trans2">The user canceled the operation</string>
-    <string name="trans3">Switch to Chinese</string>
+    <string name="trans3">To Chinese</string>
 
     <string name="trans4">Service startup</string>
     <string name="trans5">Service stopped</string>
@@ -57,4 +57,10 @@
     <string name="title_empty">title empty</string>
     <string name="default_note_title">default note title</string>
     <string name="add">+</string>
+
+    <!-- 重构后的主界面英文描述 -->
+    <string name="card1">Environment and Debug</string>
+    <string name="card1btn1">Hello</string>
+    <string name="card1btn2">Log</string>
+    <string name="card1btn3">Null</string>
 </resources>
