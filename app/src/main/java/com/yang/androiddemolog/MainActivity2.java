@@ -232,7 +232,6 @@ public class MainActivity2 extends AppCompatActivity {
 
     private void goToNextChapter() {
         startActivity(new Intent(MainActivity2.this, MMIActivity.class));
-        showToast("下一章");
     }
 
     private void showToast(String message) {

@@ -110,4 +110,21 @@
     <string name="card10btn3">Null</string>
 
     <string name="nextPage">Next</string>
+    <string name="prePage">Previous</string>
+
+    <!-- MMI -->
+    <string name="cardMMI1">TP/LCD</string>
+    <string name="cardMMI1Btn1">Bright</string>
+    <string name="cardMMI1Btn2">Image</string>
+    <string name="cardMMI1Btn3">Touch</string>
+
+    <string name="cardMMI2">Key/Flash/Vibrator</string>
+    <string name="cardMMI2Btn1">Key</string>
+    <string name="cardMMI2Btn2">Flash</string>
+    <string name="cardMMI2Btn3">Vib</string>
+
+    <string name="cardMMI3">Camera</string>
+    <string name="cardMMI3Btn1">Front</string>
+    <string name="cardMMI3Btn2">Rear</string>
+    <string name="cardMMI3Btn3">Null</string>
 </resources>

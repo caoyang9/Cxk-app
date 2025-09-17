@@ -110,4 +110,21 @@
     <string name="card10btn3">待开放</string>
 
     <string name="nextPage">下一章</string>
+    <string name="prePage">上一章</string>
+
+    <!-- MMI -->
+    <string name="cardMMI1">TP/LCD</string>
+    <string name="cardMMI1Btn1">调亮度</string>
+    <string name="cardMMI1Btn2">看图片</string>
+    <string name="cardMMI1Btn3">触摸屏</string>
+
+    <string name="cardMMI2">Key/Flash/Vibrator</string>
+    <string name="cardMMI2Btn1">按键</string>
+    <string name="cardMMI2Btn2">闪光灯</string>
+    <string name="cardMMI2Btn3">振动</string>
+
+    <string name="cardMMI3">Camera</string>
+    <string name="cardMMI3Btn1">前置</string>
+    <string name="cardMMI3Btn2">后置</string>
+    <string name="cardMMI3Btn3">待开放</string>
 </resources>
