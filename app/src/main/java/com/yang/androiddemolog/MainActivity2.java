@@ -20,6 +20,7 @@ import com.yang.androiddemolog.environmentanddebug.LogActivity;
 import com.yang.androiddemolog.interaction.BasketballActivity2;
 import com.yang.androiddemolog.interaction.IntroductionActivity2;
 import com.yang.androiddemolog.serviceActivity.ForegroundServiceActivity;
+import com.yang.androiddemolog.serviceActivity.WhatAreYouDoingDJActivity2;
 import com.yang.androiddemolog.uiActivity.DanceActivity2;
 import com.yang.androiddemolog.uiActivity.RapActivity2;
 import com.yang.androiddemolog.uiActivity.SingActivity2;
@@ -178,6 +179,8 @@ public class MainActivity2 extends AppCompatActivity {
         // card5
         findViewById(R.id.btn2_5_1).setOnClickListener(v ->
                 startActivity(new Intent(MainActivity2.this, ForegroundServiceActivity.class)));
+        findViewById(R.id.btn2_5_2).setOnClickListener(v ->
+                startActivity(new Intent(MainActivity2.this, WhatAreYouDoingDJActivity2.class)));
     }
 
     private void toggleLanguage() {

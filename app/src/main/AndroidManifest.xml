@@ -77,6 +77,7 @@
         <activity android:name=".interaction.BasketballActivity2" android:exported="false"/>
         <activity android:name=".interaction.IntroductionActivity2" android:exported="false"/>
         <activity android:name=".serviceActivity.ForegroundServiceActivity" android:exported="false"/>
+        <activity android:name=".serviceActivity.WhatAreYouDoingDJActivity2" android:exported="false"/>
 
         <service android:name="com.yang.service.MusicService"/>
         <service

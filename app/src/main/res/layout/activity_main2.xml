@@ -454,7 +454,7 @@
                             android:layout_weight="1"
                             android:backgroundTint="#8BC34A"
                             android:elevation="2dp"
-                            android:text="NFC测"
+                            android:text="后台音"
                             android:textColor="#FFFFFF"
                             android:textSize="14sp" />
 
@@ -465,7 +465,7 @@
                             android:layout_weight="1"
                             android:backgroundTint="#FF5722"
                             android:elevation="2dp"
-                            android:text="指纹测"
+                            android:text="待开放"
                             android:textColor="#FFFFFF"
                             android:textSize="14sp" />
                     </LinearLayout>
