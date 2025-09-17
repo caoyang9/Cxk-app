@@ -9,6 +9,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.yang.androiddemolog.environmentanddebug.HelloWorldActivity;
+import com.yang.androiddemolog.environmentanddebug.LogActivity;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -127,16 +128,11 @@ public class MainActivity2 extends AppCompatActivity {
 
     private void setupFunctionButtons() {
         // 设置所有功能按钮的点击事件
-        int[] buttonIds = {
-                R.id.btn2HelloWorld, R.id.btnImage, R.id.btnTouch,
-                R.id.btnPlay, R.id.btnRecord, R.id.btnVolume,
-                R.id.btnWifi, R.id.btnBluetooth, R.id.btnMobileData,
-                R.id.btnAccelerometer, R.id.btnGyroscope, R.id.btnCompass,
-                R.id.btnGps, R.id.btnNfc, R.id.btnFingerprint
-        };
-        // card1 button1
+        // card1
         findViewById(R.id.btn2HelloWorld).setOnClickListener(v ->
                 startActivity(new Intent(MainActivity2.this, HelloWorldActivity.class)));
+        findViewById(R.id.btn2Log).setOnClickListener(v ->
+                startActivity(new Intent(MainActivity2.this, LogActivity.class)));
     }
 
     private void toggleLanguage() {

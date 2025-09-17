@@ -69,6 +69,7 @@
         <activity android:name=".mmiActivity.FlashActivity" android:exported="false"/>
         <!-- 重构的Activity -->
         <activity android:name=".environmentanddebug.HelloWorldActivity" android:exported="false"/>
+        <activity android:name=".environmentanddebug.LogActivity" android:exported="false"/>
 
         <service android:name="com.yang.service.MusicService"/>
         <service
