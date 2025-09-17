@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.yang.androiddemolog.activityActivity.WhatAreYouDoingActivity2;
 import com.yang.androiddemolog.environmentanddebug.HelloWorldActivity;
 import com.yang.androiddemolog.environmentanddebug.LogActivity;
 
@@ -133,6 +134,9 @@ public class MainActivity2 extends AppCompatActivity {
                 startActivity(new Intent(MainActivity2.this, HelloWorldActivity.class)));
         findViewById(R.id.btn2Log).setOnClickListener(v ->
                 startActivity(new Intent(MainActivity2.this, LogActivity.class)));
+        // card2
+        findViewById(R.id.btn2Play).setOnClickListener(v ->
+                startActivity(new Intent(MainActivity2.this, WhatAreYouDoingActivity2.class)));
     }
 
     private void toggleLanguage() {

@@ -70,6 +70,7 @@
         <!-- 重构的Activity -->
         <activity android:name=".environmentanddebug.HelloWorldActivity" android:exported="false"/>
         <activity android:name=".environmentanddebug.LogActivity" android:exported="false"/>
+        <activity android:name=".activityActivity.WhatAreYouDoingActivity2" android:exported="false"/>
 
         <service android:name="com.yang.service.MusicService"/>
         <service

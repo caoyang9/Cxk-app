@@ -117,7 +117,7 @@
                 android:id="@+id/card2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+                android:layout_marginBottom="16dp"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="4dp">
 
@@ -157,45 +157,45 @@
 
                     <LinearLayout
                         android:id="@+id/content2"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="#F8F9FA"
                         android:orientation="horizontal"
                         android:padding="12dp"
-                        android:visibility="gone">
+                        android:visibility="gone"
+                        android:background="#F8F9FA">
 
                         <Button
-                            android:id="@+id/btnPlay"
+                            android:id="@+id/btn2Play"
                             android:layout_width="0dp"
                             android:layout_height="49dp"
                             android:layout_marginEnd="8dp"
                             android:layout_weight="1"
-                            android:backgroundTint="#2196F3"
+                            android:backgroundTint="#00BCD4"
                             android:elevation="2dp"
-                            android:text="播放测试"
+                            android:text="放音乐"
                             android:textColor="#FFFFFF"
                             android:textSize="14sp" />
 
                         <Button
-                            android:id="@+id/btnRecord"
+                            android:id="@+id/btn2_2_2"
                             android:layout_width="0dp"
                             android:layout_height="49dp"
                             android:layout_marginEnd="8dp"
                             android:layout_weight="1"
-                            android:backgroundTint="#9C27B0"
+                            android:backgroundTint="#8BC34A"
                             android:elevation="2dp"
-                            android:text="录音测试"
+                            android:text="待开放"
                             android:textColor="#FFFFFF"
                             android:textSize="14sp" />
 
                         <Button
-                            android:id="@+id/btnVolume"
+                            android:id="@+id/btn2_2_3"
                             android:layout_width="0dp"
                             android:layout_height="49dp"
                             android:layout_weight="1"
-                            android:backgroundTint="#F44336"
+                            android:backgroundTint="#FF5722"
                             android:elevation="2dp"
-                            android:text="音量测试"
+                            android:text="待开放"
                             android:textColor="#FFFFFF"
                             android:textSize="14sp" />
                     </LinearLayout>
