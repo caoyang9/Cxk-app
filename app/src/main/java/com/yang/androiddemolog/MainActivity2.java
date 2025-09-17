@@ -213,6 +213,13 @@ public class MainActivity2 extends AppCompatActivity {
                 startActivity(new Intent(MainActivity2.this, NoteSPActivity.class)));
         findViewById(R.id.btn2_8_2).setOnClickListener(v ->
                 startActivity(new Intent(MainActivity2.this, NoteSQLiteActivity.class)));
+        // card9
+        findViewById(R.id.btn2_9_1).setOnClickListener(v ->
+                startActivity(new Intent(MainActivity2.this, ExceptionActivity.class)));
+        findViewById(R.id.btn2_9_2).setOnClickListener(v ->
+                startActivity(new Intent(MainActivity2.this, ExceptionActivity.class)));
+        findViewById(R.id.btn2_9_3).setOnClickListener(v ->
+                startActivity(new Intent(MainActivity2.this, ExceptionActivity.class)));
 
     }
 
