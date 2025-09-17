@@ -220,7 +220,9 @@ public class MainActivity2 extends AppCompatActivity {
                 startActivity(new Intent(MainActivity2.this, ExceptionActivity.class)));
         findViewById(R.id.btn2_9_3).setOnClickListener(v ->
                 startActivity(new Intent(MainActivity2.this, ExceptionActivity.class)));
-
+        // card10
+        findViewById(R.id.btn2_10_1).setOnClickListener(v ->
+                startActivity(new Intent(MainActivity2.this, ContentProviderActivity.class)));
     }
 
     private void toggleLanguage() {

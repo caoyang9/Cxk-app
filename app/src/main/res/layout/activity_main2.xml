@@ -885,37 +885,37 @@
                         android:background="#F8F9FA">
 
                         <Button
-                            android:id="@+id/btn10_1"
+                            android:id="@+id/btn2_10_1"
                             android:layout_width="0dp"
                             android:layout_height="49dp"
                             android:layout_marginEnd="8dp"
                             android:layout_weight="1"
                             android:backgroundTint="#00BCD4"
                             android:elevation="2dp"
-                            android:text="GPS测试"
+                            android:text="CRUD"
                             android:textColor="#FFFFFF"
                             android:textSize="14sp" />
 
                         <Button
-                            android:id="@+id/btn10_2"
+                            android:id="@+id/btn2_10_2"
                             android:layout_width="0dp"
                             android:layout_height="49dp"
                             android:layout_marginEnd="8dp"
                             android:layout_weight="1"
                             android:backgroundTint="#8BC34A"
                             android:elevation="2dp"
-                            android:text="NFC测试"
+                            android:text="待开放"
                             android:textColor="#FFFFFF"
                             android:textSize="14sp" />
 
                         <Button
-                            android:id="@+id/btn10_3"
+                            android:id="@+id/btn2_10_3"
                             android:layout_width="0dp"
                             android:layout_height="49dp"
                             android:layout_weight="1"
                             android:backgroundTint="#FF5722"
                             android:elevation="2dp"
-                            android:text="指纹测试"
+                            android:text="待开放"
                             android:textColor="#FFFFFF"
                             android:textSize="14sp" />
                     </LinearLayout>
