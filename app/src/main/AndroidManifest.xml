@@ -71,6 +71,9 @@
         <activity android:name=".environmentanddebug.HelloWorldActivity" android:exported="false"/>
         <activity android:name=".environmentanddebug.LogActivity" android:exported="false"/>
         <activity android:name=".activityActivity.WhatAreYouDoingActivity2" android:exported="false"/>
+        <activity android:name=".uiActivity.SingActivity2" android:exported="false"/>
+        <activity android:name=".uiActivity.DanceActivity2" android:exported="false"/>
+        <activity android:name=".uiActivity.RapActivity2" android:exported="false"/>
 
         <service android:name="com.yang.service.MusicService"/>
         <service

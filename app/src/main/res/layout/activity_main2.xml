@@ -255,37 +255,37 @@
                         android:background="#F8F9FA">
 
                         <Button
-                            android:id="@+id/btnWifi"
+                            android:id="@+id/btn2_3_1"
                             android:layout_width="0dp"
                             android:layout_height="49dp"
                             android:layout_marginEnd="8dp"
                             android:layout_weight="1"
                             android:backgroundTint="#009688"
                             android:elevation="2dp"
-                            android:text="WiFi测试"
+                            android:text="CXK唱"
                             android:textColor="#FFFFFF"
                             android:textSize="14sp" />
 
                         <Button
-                            android:id="@+id/btnBluetooth"
+                            android:id="@+id/btn2_3_2"
                             android:layout_width="0dp"
                             android:layout_height="49dp"
                             android:layout_marginEnd="8dp"
                             android:layout_weight="1"
                             android:backgroundTint="#FF9800"
                             android:elevation="2dp"
-                            android:text="蓝牙测试"
+                            android:text="CXK跳"
                             android:textColor="#FFFFFF"
                             android:textSize="14sp" />
 
                         <Button
-                            android:id="@+id/btnMobileData"
+                            android:id="@+id/btn2_3_3"
                             android:layout_width="0dp"
                             android:layout_height="49dp"
                             android:layout_weight="1"
                             android:backgroundTint="#795548"
                             android:elevation="2dp"
-                            android:text="数据测试"
+                            android:text="Rap"
                             android:textColor="#FFFFFF"
                             android:textSize="14sp" />
                     </LinearLayout>
