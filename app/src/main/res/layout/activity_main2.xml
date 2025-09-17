@@ -946,7 +946,7 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/btnNext2"
+            android:id="@+id/btnNextTo2"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"

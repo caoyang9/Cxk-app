@@ -26,6 +26,7 @@ import com.yang.androiddemolog.environmentanddebug.HelloWorldActivity;
 import com.yang.androiddemolog.environmentanddebug.LogActivity;
 import com.yang.androiddemolog.interaction.BasketballActivity2;
 import com.yang.androiddemolog.interaction.IntroductionActivity2;
+import com.yang.androiddemolog.mmiActivity.MMIActivity;
 import com.yang.androiddemolog.serviceActivity.ForegroundServiceActivity;
 import com.yang.androiddemolog.serviceActivity.WhatAreYouDoingDJActivity2;
 import com.yang.androiddemolog.uiActivity.DanceActivity2;
@@ -77,7 +78,7 @@ public class MainActivity2 extends AppCompatActivity {
         setupClickListeners();
 
         // 设置底部按钮
-        findViewById(R.id.btnNext2).setOnClickListener(v -> goToNextChapter());
+        findViewById(R.id.btnNextTo2).setOnClickListener(v -> goToNextChapter());
 
         setupFunctionButtons();
     }
@@ -230,6 +231,7 @@ public class MainActivity2 extends AppCompatActivity {
     }
 
     private void goToNextChapter() {
+        startActivity(new Intent(MainActivity2.this, MMIActivity.class));
         showToast("下一章");
     }
 
