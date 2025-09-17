@@ -138,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
         });
         // 跳转到笔记Activity
         btnNote.setOnClickListener(view ->
-                startActivity(new Intent(MainActivity.this, NoteActivity.class)));
+                startActivity(new Intent(MainActivity.this, NoteSPActivity.class)));
 
         // 跳转到模拟异常Activity
         btnException.setOnClickListener(view ->

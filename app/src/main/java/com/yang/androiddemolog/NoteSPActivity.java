@@ -3,7 +3,6 @@ package com.yang.androiddemolog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
-import android.gesture.GestureOverlayView;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -28,13 +27,11 @@ import com.yang.constant.enums.NoteStrategyEnum;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
-public class NoteActivity extends AppCompatActivity {
+public class NoteSPActivity extends AppCompatActivity {
 
     private Spinner spinnerNotes;
     private TextInputEditText etNoteTitle;
@@ -47,7 +44,7 @@ public class NoteActivity extends AppCompatActivity {
     private NoteStorageStrategy noteStorageStrategy;
 
     // 策略标志 SharedPreferences: sp(默认)   SQLite: sl
-    private static final String noteStorageMode = "sl";
+    private static final String noteStorageMode = "sp";
 
     private static final String NOTE_PREFERENCE = "notes_preference";
     private static final String NOTE_TITLES_KEY = "note_titles";

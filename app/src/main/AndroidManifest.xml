@@ -65,7 +65,7 @@
         <activity android:name=".TargetActivity" android:exported="false"/>
         <activity android:name=".WhatAreYouDoingDJActivity" android:exported="false"/>
         <activity android:name=".TimerActivity" android:exported="false"/>
-        <activity android:name=".NoteActivity" android:exported="false"/>
+        <activity android:name=".NoteSPActivity" android:exported="false"/>
         <activity android:name=".ExceptionActivity" android:exported="false"/>
         <activity android:name=".ContentProviderActivity" android:exported="false"/>
         <activity android:name=".mmiActivity.MMIActivity" android:exported="false"/>
@@ -86,6 +86,7 @@
         <activity android:name=".interaction.IntroductionActivity2" android:exported="false"/>
         <activity android:name=".serviceActivity.ForegroundServiceActivity" android:exported="false"/>
         <activity android:name=".serviceActivity.WhatAreYouDoingDJActivity2" android:exported="false"/>
+        <activity android:name=".NoteSQLiteActivity" android:exported="false"/>
 
         <service android:name="com.yang.service.MusicService"/>
         <service

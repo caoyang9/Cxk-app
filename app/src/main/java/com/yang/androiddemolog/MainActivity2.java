@@ -208,6 +208,12 @@ public class MainActivity2 extends AppCompatActivity {
         // card7
         findViewById(R.id.btn2_7_1).setOnClickListener(v ->
                 startActivity(new Intent(MainActivity2.this, TimerActivity.class)));
+        // card8
+        findViewById(R.id.btn2_8_1).setOnClickListener(v ->
+                startActivity(new Intent(MainActivity2.this, NoteSPActivity.class)));
+        findViewById(R.id.btn2_8_2).setOnClickListener(v ->
+                startActivity(new Intent(MainActivity2.this, NoteSQLiteActivity.class)));
+
     }
 
     private void toggleLanguage() {
