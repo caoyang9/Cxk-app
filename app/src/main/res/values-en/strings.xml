@@ -127,4 +127,9 @@
     <string name="cardMMI3Btn1">Photo</string>
     <string name="cardMMI3Btn2">Null</string>
     <string name="cardMMI3Btn3">Null</string>
+
+    <string name="cardMMI4">Audio</string>
+    <string name="cardMMI4Btn1">Music</string>
+    <string name="cardMMI4Btn2">Null</string>
+    <string name="cardMMI4Btn3">Null</string>
 </resources>

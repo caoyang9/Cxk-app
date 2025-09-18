@@ -127,4 +127,9 @@
     <string name="cardMMI3Btn1">拍照片</string>
     <string name="cardMMI3Btn2">待开放</string>
     <string name="cardMMI3Btn3">待开放</string>
+
+    <string name="cardMMI4">Audio</string>
+    <string name="cardMMI4Btn1">听音乐</string>
+    <string name="cardMMI4Btn2">待开放</string>
+    <string name="cardMMI4Btn3">待开放</string>
 </resources>
