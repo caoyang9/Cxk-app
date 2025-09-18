@@ -124,7 +124,7 @@
     <string name="cardMMI2Btn3">振动</string>
 
     <string name="cardMMI3">Camera</string>
-    <string name="cardMMI3Btn1">前置</string>
-    <string name="cardMMI3Btn2">后置</string>
+    <string name="cardMMI3Btn1">拍照片</string>
+    <string name="cardMMI3Btn2">待开放</string>
     <string name="cardMMI3Btn3">待开放</string>
 </resources>

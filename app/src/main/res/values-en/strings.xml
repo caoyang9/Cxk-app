@@ -124,7 +124,7 @@
     <string name="cardMMI2Btn3">Vib</string>
 
     <string name="cardMMI3">Camera</string>
-    <string name="cardMMI3Btn1">Front</string>
-    <string name="cardMMI3Btn2">Rear</string>
+    <string name="cardMMI3Btn1">Photo</string>
+    <string name="cardMMI3Btn2">Null</string>
     <string name="cardMMI3Btn3">Null</string>
 </resources>

@@ -31,6 +31,9 @@
     <!-- 开启闪光灯的权限 -->
     <uses-permission android:name="android.permission.CAMERA" />
 
+    <!-- 自动聚焦 -->
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -75,6 +78,7 @@
         <activity android:name=".mmiActivity.VibratorActivity" android:exported="false"/>
         <activity android:name=".mmiActivity.ColorControlActivity" android:exported="false"/>
         <activity android:name=".mmiActivity.FlashActivity" android:exported="false"/>
+        <activity android:name=".mmiActivity.TakePhotoActivity" android:exported="false"/>
         <!-- 重构的Activity -->
         <activity android:name=".environmentanddebug.HelloWorldActivity" android:exported="false"/>
         <activity android:name=".environmentanddebug.LogActivity" android:exported="false"/>

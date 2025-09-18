@@ -29,6 +29,8 @@ public class MMIActivity extends AppCompatActivity {
     // 定义按键、闪光灯、振动按钮
     private Button vibratorBtn, keyBtn, flashBtn;
 
+    private Button takePhotoBtn;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +55,8 @@ public class MMIActivity extends AppCompatActivity {
         keyBtn = findViewById(R.id.btn_key);
         flashBtn = findViewById(R.id.btn_flash);
 
+        takePhotoBtn = findViewById(R.id.btn_take_photo);
+
         brightnessBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, BrightnessActivity.class)));
         imageBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, ImageActivity.class)));
         touchBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, TouchActivity.class)));
@@ -60,6 +64,8 @@ public class MMIActivity extends AppCompatActivity {
         vibratorBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, VibratorActivity.class)));
         keyBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, ColorControlActivity.class)));
         flashBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, FlashActivity.class  )));
+
+        takePhotoBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, TakePhotoActivity.class)));
     }
 
     private void initMappings() {
