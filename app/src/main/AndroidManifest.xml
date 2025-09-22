@@ -34,6 +34,11 @@
     <!-- 自动聚焦 -->
     <uses-feature android:name="android.hardware.camera.autofocus" />
 
+    <!-- 录音权限 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO"/>
+
+
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
@@ -83,7 +88,7 @@
         <activity android:name=".mmiActivity.FlashActivity" android:exported="false"/>
         <activity android:name=".mmiActivity.TakePhotoActivity" android:exported="false"/>
         <activity android:name=".mmiActivity.AudioMusicActivity" android:exported="false"/>
-        <activity android:name=".mmiActivity.TingtongMusicActivity" android:exported="false"/>
+        <activity android:name=".mmiActivity.MediaRecorderActivity" android:exported="false"/>
         <!-- 重构的Activity -->
         <activity android:name=".environmentanddebug.HelloWorldActivity" android:exported="false"/>
         <activity android:name=".environmentanddebug.LogActivity" android:exported="false"/>

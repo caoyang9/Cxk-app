@@ -31,7 +31,7 @@ public class MMIActivity extends AppCompatActivity {
 
     private Button takePhotoBtn;
 
-    private Button audioMusic;
+    private Button audioMusic, recordingBtn;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -60,6 +60,7 @@ public class MMIActivity extends AppCompatActivity {
         takePhotoBtn = findViewById(R.id.btn_take_photo);
 
         audioMusic = findViewById(R.id.btn_audio_music);
+        recordingBtn = findViewById(R.id.btn2_audio_recording);
 
         brightnessBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, BrightnessActivity.class)));
         imageBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, ImageActivity.class)));
@@ -72,6 +73,7 @@ public class MMIActivity extends AppCompatActivity {
         takePhotoBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, TakePhotoActivity.class)));
 
         audioMusic.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, AudioMusicActivity.class)));
+        recordingBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, MediaRecorderActivity.class)));
     }
 
     private void initMappings() {

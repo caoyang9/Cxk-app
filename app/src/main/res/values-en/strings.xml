@@ -130,6 +130,6 @@
 
     <string name="cardMMI4">Audio</string>
     <string name="cardMMI4Btn1">Music</string>
-    <string name="cardMMI4Btn2">Null</string>
+    <string name="cardMMI4Btn2">Record</string>
     <string name="cardMMI4Btn3">Null</string>
 </resources>
