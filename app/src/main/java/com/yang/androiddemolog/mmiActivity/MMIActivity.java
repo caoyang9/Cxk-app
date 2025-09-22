@@ -66,6 +66,7 @@ public class MMIActivity extends AppCompatActivity {
 
         lightSensorBtn = findViewById(R.id.btn_sensor_1);
         proximitySensorBtn = findViewById(R.id.btn_sensor_2);
+        gravitySensorBtn = findViewById(R.id.btn_sensor_3);
 
         brightnessBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, BrightnessActivity.class)));
         imageBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, ImageActivity.class)));
@@ -82,6 +83,7 @@ public class MMIActivity extends AppCompatActivity {
 
         lightSensorBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, LightActivity.class)));
         proximitySensorBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, ProximityActivity.class)));
+        gravitySensorBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, GravityActivity.class)));
     }
 
     private void initMappings() {
