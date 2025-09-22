@@ -138,4 +138,8 @@
     <string name="cardMMI5Btn2">PRO</string>
     <string name="cardMMI5Btn3">Gra</string>
     <string name="cardMMI5Btn4">Acc</string>
+    <string name="cardMMI5Btn5">Gyr</string>
+    <string name="cardMMI5Btn6">Mag</string>
+    <string name="cardMMI5Btn7">Hall</string>
+    <string name="cardMMI5Btn8">SAR</string>
 </resources>

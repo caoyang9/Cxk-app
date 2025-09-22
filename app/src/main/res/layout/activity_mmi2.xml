@@ -260,7 +260,7 @@
                             android:layout_height="49dp"
                             android:layout_marginEnd="8dp"
                             android:layout_weight="1"
-                            android:backgroundTint="#009688"
+                            android:backgroundTint="#66DD00"
                             android:elevation="2dp"
                             android:text="@string/cardMMI3Btn1"
                             android:textColor="#FFFFFF"
@@ -272,7 +272,7 @@
                             android:layout_height="49dp"
                             android:layout_marginEnd="8dp"
                             android:layout_weight="1"
-                            android:backgroundTint="#FF9800"
+                            android:backgroundTint="#B94FFF"
                             android:elevation="2dp"
                             android:text="@string/cardMMI3Btn2"
                             android:textColor="#FFFFFF"
@@ -283,7 +283,7 @@
                             android:layout_width="0dp"
                             android:layout_height="49dp"
                             android:layout_weight="1"
-                            android:backgroundTint="#795548"
+                            android:backgroundTint="#FF8888"
                             android:elevation="2dp"
                             android:text="@string/cardMMI3Btn3"
                             android:textColor="#FFFFFF"
@@ -429,56 +429,161 @@
                         android:id="@+id/contentMMI5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
+                        android:orientation="vertical"
                         android:padding="12dp"
                         android:visibility="gone"
                         android:background="#F8F9FA">
 
-                        <Button
-                            android:id="@+id/btn_sensor_1"
-                            android:layout_width="0dp"
-                            android:layout_height="49dp"
-                            android:layout_marginEnd="8dp"
-                            android:layout_weight="1"
-                            android:backgroundTint="#009688"
-                            android:elevation="2dp"
-                            android:text="@string/cardMMI5Btn1"
-                            android:textColor="#FFFFFF"
-                            android:textSize="14sp" />
+                        <!-- 第一行按钮 -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="4">
 
-                        <Button
-                            android:id="@+id/btn_sensor_2"
-                            android:layout_width="0dp"
-                            android:layout_height="49dp"
-                            android:layout_marginEnd="8dp"
-                            android:layout_weight="1"
-                            android:backgroundTint="#FF9800"
-                            android:elevation="2dp"
-                            android:text="@string/cardMMI5Btn2"
-                            android:textColor="#FFFFFF"
-                            android:textSize="14sp" />
+                            <Button
+                                android:id="@+id/btn_sensor_1"
+                                android:layout_width="0dp"
+                                android:layout_height="49dp"
+                                android:layout_marginEnd="4dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#009688"
+                                android:elevation="2dp"
+                                android:text="@string/cardMMI5Btn1"
+                                android:textColor="#FFFFFF"
+                                android:textSize="12sp"
+                                android:paddingStart="4dp"
+                                android:paddingEnd="4dp"
+                                android:singleLine="true"
+                                android:ellipsize="end"
+                                android:minWidth="40dp" />
 
-                        <Button
-                            android:id="@+id/btn_sensor_3"
-                            android:layout_width="0dp"
-                            android:layout_height="49dp"
-                            android:layout_weight="1"
-                            android:backgroundTint="#795548"
-                            android:elevation="2dp"
-                            android:text="@string/cardMMI5Btn3"
-                            android:textColor="#FFFFFF"
-                            android:textSize="14sp" />
+                            <Button
+                                android:id="@+id/btn_sensor_2"
+                                android:layout_width="0dp"
+                                android:layout_height="49dp"
+                                android:layout_marginEnd="4dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#FF9800"
+                                android:elevation="2dp"
+                                android:text="@string/cardMMI5Btn2"
+                                android:textColor="#FFFFFF"
+                                android:textSize="12sp"
+                                android:paddingStart="4dp"
+                                android:paddingEnd="4dp"
+                                android:singleLine="true"
+                                android:ellipsize="end"
+                                android:minWidth="40dp" />
 
-                        <Button
-                            android:id="@+id/btn_sensor_4"
-                            android:layout_width="0dp"
-                            android:layout_height="49dp"
-                            android:layout_weight="1"
-                            android:backgroundTint="#EE82EE"
-                            android:elevation="2dp"
-                            android:text="@string/cardMMI5Btn4"
-                            android:textColor="#FFFFFF"
-                            android:textSize="14sp" />
+                            <Button
+                                android:id="@+id/btn_sensor_3"
+                                android:layout_width="0dp"
+                                android:layout_height="49dp"
+                                android:layout_marginEnd="4dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#886600"
+                                android:elevation="2dp"
+                                android:text="@string/cardMMI5Btn3"
+                                android:textColor="#FFFFFF"
+                                android:textSize="12sp"
+                                android:paddingStart="4dp"
+                                android:paddingEnd="4dp"
+                                android:singleLine="true"
+                                android:ellipsize="end"
+                                android:minWidth="40dp" />
+
+                            <Button
+                                android:id="@+id/btn_sensor_4"
+                                android:layout_width="0dp"
+                                android:layout_height="49dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#EE82EE"
+                                android:elevation="2dp"
+                                android:text="@string/cardMMI5Btn4"
+                                android:textColor="#FFFFFF"
+                                android:textSize="12sp"
+                                android:paddingStart="4dp"
+                                android:paddingEnd="4dp"
+                                android:singleLine="true"
+                                android:ellipsize="end"
+                                android:minWidth="40dp" />
+                        </LinearLayout>
+
+                        <!-- 第二行按钮 -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="4"
+                            android:layout_marginTop="8dp">
+
+                            <Button
+                                android:id="@+id/btn_sensor_5"
+                                android:layout_width="0dp"
+                                android:layout_height="49dp"
+                                android:layout_marginEnd="4dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#2196F3"
+                                android:elevation="2dp"
+                                android:text="@string/cardMMI5Btn5"
+                                android:textColor="#FFFFFF"
+                                android:textSize="12sp"
+                                android:paddingStart="4dp"
+                                android:paddingEnd="4dp"
+                                android:singleLine="true"
+                                android:ellipsize="end"
+                                android:minWidth="40dp" />
+
+                            <Button
+                                android:id="@+id/btn_sensor_6"
+                                android:layout_width="0dp"
+                                android:layout_height="49dp"
+                                android:layout_marginEnd="4dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#4CAF50"
+                                android:elevation="2dp"
+                                android:text="@string/cardMMI5Btn6"
+                                android:textColor="#FFFFFF"
+                                android:textSize="12sp"
+                                android:paddingStart="4dp"
+                                android:paddingEnd="4dp"
+                                android:singleLine="true"
+                                android:ellipsize="end"
+                                android:minWidth="40dp" />
+
+                            <Button
+                                android:id="@+id/btn_sensor_7"
+                                android:layout_width="0dp"
+                                android:layout_height="49dp"
+                                android:layout_marginEnd="4dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#F44336"
+                                android:elevation="2dp"
+                                android:text="@string/cardMMI5Btn7"
+                                android:textColor="#FFFFFF"
+                                android:textSize="12sp"
+                                android:paddingStart="4dp"
+                                android:paddingEnd="4dp"
+                                android:singleLine="true"
+                                android:ellipsize="end"
+                                android:minWidth="40dp" />
+
+                            <Button
+                                android:id="@+id/btn_sensor_8"
+                                android:layout_width="0dp"
+                                android:layout_height="49dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#9C27B0"
+                                android:elevation="2dp"
+                                android:text="@string/cardMMI5Btn8"
+                                android:textColor="#FFFFFF"
+                                android:textSize="12sp"
+                                android:paddingStart="4dp"
+                                android:paddingEnd="4dp"
+                                android:singleLine="true"
+                                android:ellipsize="end"
+                                android:minWidth="40dp" />
+                        </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>

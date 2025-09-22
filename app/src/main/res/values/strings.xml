@@ -134,8 +134,12 @@
     <string name="cardMMI4Btn3">待开放</string>
 
     <string name="cardMMI5">Sensor</string>
-    <string name="cardMMI5Btn1">光</string>
-    <string name="cardMMI5Btn2">距</string>
-    <string name="cardMMI5Btn3">重</string>
-    <string name="cardMMI5Btn4">速</string>
+    <string name="cardMMI5Btn1">光感</string>
+    <string name="cardMMI5Btn2">距离</string>
+    <string name="cardMMI5Btn3">重力</string>
+    <string name="cardMMI5Btn4">加速</string>
+    <string name="cardMMI5Btn5">陀螺</string>
+    <string name="cardMMI5Btn6">地磁</string>
+    <string name="cardMMI5Btn7">霍尔</string>
+    <string name="cardMMI5Btn8">SAR</string>
 </resources>
