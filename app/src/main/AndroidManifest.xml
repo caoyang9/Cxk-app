@@ -43,6 +43,12 @@
     <!-- 声明应用使用光线传感器 -->
     <uses-feature android:name="android.hardware.sensor.light" />
 
+    <!-- 高级屏幕控制：可选添加 -->
+<!--    <uses-permission android:name="android.permission.WAKE_LOCK" />-->
+
+    <!-- 声明使用距离传感器特性（可选，但推荐） -->
+    <uses-feature android:name="android.hardware.sensor.proximity" />
+
 
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
@@ -95,6 +101,7 @@
         <activity android:name=".mmiActivity.AudioMusicActivity" android:exported="false"/>
         <activity android:name=".mmiActivity.MediaRecorderActivity" android:exported="false"/>
         <activity android:name=".mmiActivity.LightActivity" android:exported="false"/>
+        <activity android:name=".mmiActivity.ProximityActivity" android:exported="false"/>
         <!-- 重构的Activity -->
         <activity android:name=".environmentanddebug.HelloWorldActivity" android:exported="false"/>
         <activity android:name=".environmentanddebug.LogActivity" android:exported="false"/>

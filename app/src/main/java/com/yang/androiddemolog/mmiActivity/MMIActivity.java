@@ -65,6 +65,7 @@ public class MMIActivity extends AppCompatActivity {
         recordingBtn = findViewById(R.id.btn2_audio_recording);
 
         lightSensorBtn = findViewById(R.id.btn_sensor_1);
+        proximitySensorBtn = findViewById(R.id.btn_sensor_2);
 
         brightnessBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, BrightnessActivity.class)));
         imageBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, ImageActivity.class)));
@@ -80,6 +81,7 @@ public class MMIActivity extends AppCompatActivity {
         recordingBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, MediaRecorderActivity.class)));
 
         lightSensorBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, LightActivity.class)));
+        proximitySensorBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, ProximityActivity.class)));
     }
 
     private void initMappings() {
