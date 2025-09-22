@@ -132,4 +132,10 @@
     <string name="cardMMI4Btn1">Music</string>
     <string name="cardMMI4Btn2">Record</string>
     <string name="cardMMI4Btn3">Null</string>
+
+    <string name="cardMMI5">Sensor</string>
+    <string name="cardMMI5Btn1">Sun</string>
+    <string name="cardMMI5Btn2">PRO</string>
+    <string name="cardMMI5Btn3">Gra</string>
+    <string name="cardMMI5Btn4">Acc</string>
 </resources>

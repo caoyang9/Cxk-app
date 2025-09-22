@@ -38,6 +38,11 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO"/>
     <uses-permission android:name="android.permission.READ_MEDIA_AUDIO"/>
 
+    <!-- targetSDK >= 33 (Android 13), 需要声明此权限 -->
+    <uses-permission android:name="android.permission.BODY_SENSORS" />
+    <!-- 声明应用使用光线传感器 -->
+    <uses-feature android:name="android.hardware.sensor.light" />
+
 
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
@@ -89,6 +94,7 @@
         <activity android:name=".mmiActivity.TakePhotoActivity" android:exported="false"/>
         <activity android:name=".mmiActivity.AudioMusicActivity" android:exported="false"/>
         <activity android:name=".mmiActivity.MediaRecorderActivity" android:exported="false"/>
+        <activity android:name=".mmiActivity.LightActivity" android:exported="false"/>
         <!-- 重构的Activity -->
         <activity android:name=".environmentanddebug.HelloWorldActivity" android:exported="false"/>
         <activity android:name=".environmentanddebug.LogActivity" android:exported="false"/>

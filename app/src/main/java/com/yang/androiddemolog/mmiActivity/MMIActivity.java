@@ -33,6 +33,8 @@ public class MMIActivity extends AppCompatActivity {
 
     private Button audioMusic, recordingBtn;
 
+    private Button lightSensorBtn, proximitySensorBtn, gravitySensorBtn, accelerationSensorBtn;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,6 +64,8 @@ public class MMIActivity extends AppCompatActivity {
         audioMusic = findViewById(R.id.btn_audio_music);
         recordingBtn = findViewById(R.id.btn2_audio_recording);
 
+        lightSensorBtn = findViewById(R.id.btn_sensor_1);
+
         brightnessBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, BrightnessActivity.class)));
         imageBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, ImageActivity.class)));
         touchBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, TouchActivity.class)));
@@ -74,6 +78,8 @@ public class MMIActivity extends AppCompatActivity {
 
         audioMusic.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, AudioMusicActivity.class)));
         recordingBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, MediaRecorderActivity.class)));
+
+        lightSensorBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, LightActivity.class)));
     }
 
     private void initMappings() {
@@ -82,18 +88,21 @@ public class MMIActivity extends AppCompatActivity {
         arrowToContentMap.put(R.id.arrowMMI2, R.id.contentMMI2);
         arrowToContentMap.put(R.id.arrowMMI3, R.id.contentMMI3);
         arrowToContentMap.put(R.id.arrowMMI4, R.id.contentMMI4);
+        arrowToContentMap.put(R.id.arrowMMI5, R.id.contentMMI5);
 
         // 初始化箭头视图映射
         arrowViewMap.put(R.id.arrowMMI1, findViewById(R.id.arrowMMI1));
         arrowViewMap.put(R.id.arrowMMI2, findViewById(R.id.arrowMMI2));
         arrowViewMap.put(R.id.arrowMMI3, findViewById(R.id.arrowMMI3));
         arrowViewMap.put(R.id.arrowMMI4, findViewById(R.id.arrowMMI4));
+        arrowViewMap.put(R.id.arrowMMI5, findViewById(R.id.arrowMMI5));
 
         // 初始化内容视图映射
         contentViewMap.put(R.id.contentMMI1, findViewById(R.id.contentMMI1));
         contentViewMap.put(R.id.contentMMI2, findViewById(R.id.contentMMI2));
         contentViewMap.put(R.id.contentMMI3, findViewById(R.id.contentMMI3));
         contentViewMap.put(R.id.contentMMI4, findViewById(R.id.contentMMI4));
+        contentViewMap.put(R.id.contentMMI5, findViewById(R.id.contentMMI5));
     }
 
     private void setupClickListeners() {
@@ -102,6 +111,7 @@ public class MMIActivity extends AppCompatActivity {
         setupCardClickListener(R.id.cardMMI2, R.id.contentMMI2, R.id.arrowMMI2);
         setupCardClickListener(R.id.cardMMI3, R.id.contentMMI3, R.id.arrowMMI3);
         setupCardClickListener(R.id.cardMMI4, R.id.contentMMI4, R.id.arrowMMI4);
+        setupCardClickListener(R.id.cardMMI5, R.id.contentMMI5, R.id.arrowMMI5);
 
         // 为每个箭头设置点击监听器
         for (Integer arrowId : arrowToContentMap.keySet()) {
