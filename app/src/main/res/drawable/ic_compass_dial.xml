@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="280dp"
+    android:height="280dp"
+    android:viewportWidth="280"
+    android:viewportHeight="280">
+
+    <!-- 外圆环 半径135 描边4dp -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#5D4037"
+        android:strokeWidth="4"
+        android:pathData="M140,140 m-135,0 a135,135 0 1,0 270,0 a135,135 0 1,0 -270,0" />
+
+    <!-- 内圆环 半径120 描边2dp -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#8D6E63"
+        android:strokeWidth="2"
+        android:pathData="M140,140 m-120,0 a120,120 0 1,0 240,0 a120,120 0 1,0 -240,0" />
+
+    <!-- 刻度线 -->
+    <path
+        android:strokeColor="#8D6E63"
+        android:strokeWidth="2"
+        android:pathData="M140,20 L140,30" />
+    <path
+        android:strokeColor="#8D6E63"
+        android:strokeWidth="2"
+        android:pathData="M140,250 L140,260" />
+    <path
+        android:strokeColor="#8D6E63"
+        android:strokeWidth="2"
+        android:pathData="M20,140 L30,140" />
+    <path
+        android:strokeColor="#8D6E63"
+        android:strokeWidth="2"
+        android:pathData="M250,140 L260,140" />
+
+    <!-- 文字占位（空路径，无绘制）-->
+    <!--
+    真正使用时把 N/S/E/W/NE/SE/SW/NW 转成路径后贴进来，
+    或者直接在 UI 层用 TextView/Compose 叠加文字。
+    -->
+</vector>

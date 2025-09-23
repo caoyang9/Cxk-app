@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+
+    <!-- 北指针（红色） -->
+    <path
+        android:fillColor="#F44336"
+        android:strokeColor="#D32F2F"
+        android:strokeWidth="1"
+        android:pathData="M100,20 L80,180 L100,160 L120,180 Z" />
+
+    <!-- 中心圆 半径15 → 用 path 画圆 -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:strokeColor="#5D4037"
+        android:strokeWidth="2"
+        android:pathData="M100,100 m-15,0 a15,15 0 1,0 30,0 a15,15 0 1,0 -30,0" />
+</vector>

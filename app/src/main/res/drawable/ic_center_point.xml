@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="20dp"
+    android:height="20dp"
+    android:viewportWidth="20"
+    android:viewportHeight="20">
+
+    <!-- 外圆 #FF5722，描边 #D32F2F 1 px -->
+    <path
+        android:fillColor="#FF5722"
+        android:strokeColor="#D32F2F"
+        android:strokeWidth="1"
+        android:pathData="M10,10 m-8,0 a8,8 0 1,0 16,0 a8,8 0 1,0 -16,0" />
+
+    <!-- 内圆（白点）#FFFFFF 半径 3 -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M10,10 m-3,0 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0" />
+</vector>

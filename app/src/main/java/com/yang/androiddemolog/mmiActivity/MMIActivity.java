@@ -34,7 +34,7 @@ public class MMIActivity extends AppCompatActivity {
     private Button audioMusic, recordingBtn;
 
     private Button lightSensorBtn, proximitySensorBtn, gravitySensorBtn, accelerationSensorBtn,
-            gyroscopeSensorBtn, magneticFieldSensorBtn, game1Btn;
+            gyroscopeSensorBtn, magneticFieldSensorBtn, game1Btn, game2Btn;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -72,6 +72,7 @@ public class MMIActivity extends AppCompatActivity {
         gyroscopeSensorBtn = findViewById(R.id.btn_sensor_5);
         magneticFieldSensorBtn = findViewById(R.id.btn_sensor_6);
         game1Btn = findViewById(R.id.btn_sensor_7);
+        game2Btn = findViewById(R.id.btn_sensor_8);
 
         brightnessBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, BrightnessActivity.class)));
         imageBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, ImageActivity.class)));
@@ -93,6 +94,7 @@ public class MMIActivity extends AppCompatActivity {
         gyroscopeSensorBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, GyroscopeActivity.class)));
         magneticFieldSensorBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, MagnetometerActivity.class)));
         game1Btn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, GyroBallActivity.class)));
+        game2Btn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, CompassActivity.class)));
     }
 
     private void initMappings() {

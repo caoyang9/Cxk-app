@@ -107,6 +107,7 @@
         <activity android:name=".mmiActivity.GyroscopeActivity" android:exported="false"/>
         <activity android:name=".mmiActivity.MagnetometerActivity" android:exported="false"/>
         <activity android:name=".mmiActivity.GyroBallActivity" android:exported="false"/>
+        <activity android:name=".mmiActivity.CompassActivity" android:exported="false"/>
         <!-- 重构的Activity -->
         <activity android:name=".environmentanddebug.HelloWorldActivity" android:exported="false"/>
         <activity android:name=".environmentanddebug.LogActivity" android:exported="false"/>
