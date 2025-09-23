@@ -34,7 +34,7 @@ public class MMIActivity extends AppCompatActivity {
     private Button audioMusic, recordingBtn;
 
     private Button lightSensorBtn, proximitySensorBtn, gravitySensorBtn, accelerationSensorBtn,
-            gyroscopeSensorBtn;
+            gyroscopeSensorBtn, magneticFieldSensorBtn;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -70,6 +70,7 @@ public class MMIActivity extends AppCompatActivity {
         gravitySensorBtn = findViewById(R.id.btn_sensor_3);
         accelerationSensorBtn = findViewById(R.id.btn_sensor_4);
         gyroscopeSensorBtn = findViewById(R.id.btn_sensor_5);
+        magneticFieldSensorBtn = findViewById(R.id.btn_sensor_6);
 
         brightnessBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, BrightnessActivity.class)));
         imageBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, ImageActivity.class)));
@@ -89,6 +90,7 @@ public class MMIActivity extends AppCompatActivity {
         gravitySensorBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, GravityActivity.class)));
         accelerationSensorBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, AccelerometerActivity.class)));
         gyroscopeSensorBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, GyroscopeActivity.class)));
+        magneticFieldSensorBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, MagnetometerActivity.class)));
     }
 
     private void initMappings() {

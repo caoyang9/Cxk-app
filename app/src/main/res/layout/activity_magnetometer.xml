@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="#F5F5F5"
+    android:gravity="center_horizontal">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="地磁传感器测试"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="20dp"/>
+
+    <!-- 指南针显示 -->
+    <FrameLayout
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:background="@drawable/bg_compass_circle"
+        android:layout_marginBottom="30dp">
+
+        <ImageView
+            android:id="@+id/iv_compass"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_gyro_arrow_simple"
+            android:contentDescription="指南针指针"/>
+
+    </FrameLayout>
+
+    <!-- 磁场强度显示 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_sensor_data"
+        android:padding="16dp"
+        android:layout_marginBottom="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="磁场强度测量"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#2196F3"
+            android:layout_marginBottom="12dp"/>
+
+        <TextView
+            android:id="@+id/tv_x"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="X轴: -- μT"
+            android:textSize="14sp"
+            android:layout_marginBottom="6dp"/>
+
+        <TextView
+            android:id="@+id/tv_y"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Y轴: -- μT"
+            android:textSize="14sp"
+            android:layout_marginBottom="6dp"/>
+
+        <TextView
+            android:id="@+id/tv_z"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Z轴: -- μT"
+            android:textSize="14sp"
+            android:layout_marginBottom="10dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#DDDDDD"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:id="@+id/tv_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="总磁场强度: -- μT"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+    <!-- 方向信息 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_frame"
+        android:padding="16dp"
+        android:layout_marginBottom="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="设备方向计算"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#FF5722"
+            android:layout_marginBottom="12dp"/>
+
+        <TextView
+            android:id="@+id/tv_azimuth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="方位角: --°"
+            android:textSize="14sp"
+            android:layout_marginBottom="6dp"/>
+
+        <TextView
+            android:id="@+id/tv_pitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="俯仰角: --°"
+            android:textSize="14sp"
+            android:layout_marginBottom="6dp"/>
+
+        <TextView
+            android:id="@+id/tv_roll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="横滚角: --°"
+            android:textSize="14sp"/>
+
+    </LinearLayout>
+
+    <!-- 状态信息 -->
+    <TextView
+        android:id="@+id/tv_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="状态监测中..."
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp"/>
+
+</LinearLayout>
