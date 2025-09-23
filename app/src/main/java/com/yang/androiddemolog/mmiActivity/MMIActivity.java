@@ -104,7 +104,8 @@ public class MMIActivity extends AppCompatActivity {
         arrowToContentMap.put(R.id.arrowMMI3, R.id.contentMMI3);
         arrowToContentMap.put(R.id.arrowMMI4, R.id.contentMMI4);
         arrowToContentMap.put(R.id.arrowMMI5, R.id.contentMMI5);
-//        arrowToContentMap.put(R.id.arrowMMI55, R.id.contentMMI55);
+        arrowToContentMap.put(R.id.arrowMMI6, R.id.contentMMI6);
+        arrowToContentMap.put(R.id.arrowMMI7, R.id.contentMMI7);
 
         // 初始化箭头视图映射
         arrowViewMap.put(R.id.arrowMMI1, findViewById(R.id.arrowMMI1));
@@ -112,7 +113,8 @@ public class MMIActivity extends AppCompatActivity {
         arrowViewMap.put(R.id.arrowMMI3, findViewById(R.id.arrowMMI3));
         arrowViewMap.put(R.id.arrowMMI4, findViewById(R.id.arrowMMI4));
         arrowViewMap.put(R.id.arrowMMI5, findViewById(R.id.arrowMMI5));
-//        arrowViewMap.put(R.id.arrowMMI55, findViewById(R.id.arrowMMI55));
+        arrowViewMap.put(R.id.arrowMMI6, findViewById(R.id.arrowMMI6));
+        arrowViewMap.put(R.id.arrowMMI7, findViewById(R.id.arrowMMI7));
 
         // 初始化内容视图映射
         contentViewMap.put(R.id.contentMMI1, findViewById(R.id.contentMMI1));
@@ -120,7 +122,8 @@ public class MMIActivity extends AppCompatActivity {
         contentViewMap.put(R.id.contentMMI3, findViewById(R.id.contentMMI3));
         contentViewMap.put(R.id.contentMMI4, findViewById(R.id.contentMMI4));
         contentViewMap.put(R.id.contentMMI5, findViewById(R.id.contentMMI5));
-//        contentViewMap.put(R.id.contentMMI55, findViewById(R.id.contentMMI55));
+        contentViewMap.put(R.id.contentMMI6, findViewById(R.id.contentMMI6));
+        contentViewMap.put(R.id.contentMMI7, findViewById(R.id.contentMMI7));
     }
 
     private void setupClickListeners() {
@@ -130,7 +133,8 @@ public class MMIActivity extends AppCompatActivity {
         setupCardClickListener(R.id.cardMMI3, R.id.contentMMI3, R.id.arrowMMI3);
         setupCardClickListener(R.id.cardMMI4, R.id.contentMMI4, R.id.arrowMMI4);
         setupCardClickListener(R.id.cardMMI5, R.id.contentMMI5, R.id.arrowMMI5);
-//        setupCardClickListener(R.id.cardMMI55, R.id.contentMMI55, R.id.arrowMMI55);
+        setupCardClickListener(R.id.cardMMI6, R.id.contentMMI6, R.id.arrowMMI6);
+        setupCardClickListener(R.id.cardMMI7, R.id.contentMMI7, R.id.arrowMMI7);
 
         // 为每个箭头设置点击监听器
         for (Integer arrowId : arrowToContentMap.keySet()) {

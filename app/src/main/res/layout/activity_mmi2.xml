@@ -588,6 +588,186 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+            <!-- 第六行卡片 -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardMMI6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="16dp"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/cardMMI6"
+                            android:textColor="#333333"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/arrowMMI6"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center_vertical"
+                            android:src="@drawable/ic_arrow_down"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:onClick="onArrowClick"
+                            tools:ignore="ContentDescription" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/contentMMI6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="12dp"
+                        android:visibility="gone"
+                        android:background="#F8F9FA">
+
+                        <Button
+                            android:id="@+id/btn_usb"
+                            android:layout_width="0dp"
+                            android:layout_height="49dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="#E47833"
+                            android:elevation="2dp"
+                            android:text="@string/cardMMI6Btn1"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14sp" />
+
+                        <Button
+                            android:id="@+id/btn_otc"
+                            android:layout_width="0dp"
+                            android:layout_height="49dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="#426F42"
+                            android:elevation="2dp"
+                            android:text="@string/cardMMI6Btn2"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14sp" />
+
+                        <Button
+                            android:id="@+id/power"
+                            android:layout_width="0dp"
+                            android:layout_height="49dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="#007FFF"
+                            android:elevation="2dp"
+                            android:text="@string/cardMMI6Btn3"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- 第七行卡片 -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardMMI7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="16dp"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/cardMMI7"
+                            android:textColor="#333333"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/arrowMMI7"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center_vertical"
+                            android:src="@drawable/ic_arrow_down"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:onClick="onArrowClick"
+                            tools:ignore="ContentDescription" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/contentMMI7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="12dp"
+                        android:visibility="gone"
+                        android:background="#F8F9FA">
+
+                        <Button
+                            android:id="@+id/btn_bt"
+                            android:layout_width="0dp"
+                            android:layout_height="49dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="#2F2F4F"
+                            android:elevation="2dp"
+                            android:text="@string/cardMMI7Btn1"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14sp" />
+
+                        <Button
+                            android:id="@+id/btn_wifi"
+                            android:layout_width="0dp"
+                            android:layout_height="49dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="#FF9800"
+                            android:elevation="2dp"
+                            android:text="@string/cardMMI7Btn2"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14sp" />
+
+                        <Button
+                            android:id="@+id/btn_gps"
+                            android:layout_width="0dp"
+                            android:layout_height="49dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="#795548"
+                            android:elevation="2dp"
+                            android:text="@string/cardMMI7Btn3"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
         </LinearLayout>
     </ScrollView>
 

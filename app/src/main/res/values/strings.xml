@@ -142,4 +142,14 @@
     <string name="cardMMI5Btn6">地磁</string>
     <string name="cardMMI5Btn7">小球</string>
     <string name="cardMMI5Btn8">指南</string>
+
+    <string name="cardMMI6">Charge</string>
+    <string name="cardMMI6Btn1">USB</string>
+    <string name="cardMMI6Btn2">OTC</string>
+    <string name="cardMMI6Btn3">Power</string>
+
+    <string name="cardMMI7">BT/WIFI/GPS</string>
+    <string name="cardMMI7Btn1">蓝牙</string>
+    <string name="cardMMI7Btn2">WIFI</string>
+    <string name="cardMMI7Btn3">GPS</string>
 </resources>
