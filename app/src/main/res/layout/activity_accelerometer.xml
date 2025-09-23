@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="#F0F0F0">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="加速度传感器"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="30dp"/>
+
+    <!-- 当前加速度值 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_sensor_data"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="当前加速度"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#0066CC"
+            android:layout_marginBottom="12dp"/>
+
+        <TextView
+            android:id="@+id/tv_x"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="X轴: -- m/s²"
+            android:textSize="16sp"
+            android:layout_marginBottom="6dp"/>
+
+        <TextView
+            android:id="@+id/tv_y"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Y轴: -- m/s²"
+            android:textSize="16sp"
+            android:layout_marginBottom="6dp"/>
+
+        <TextView
+            android:id="@+id/tv_z"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Z轴: -- m/s²"
+            android:textSize="16sp"
+            android:layout_marginBottom="12dp"/>
+
+        <TextView
+            android:id="@+id/tv_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="总加速度: -- m/s²"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+    <!-- 最大加速度记录 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_max_data"
+        android:padding="16dp"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="最大加速度记录"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#FF5722"
+            android:layout_marginBottom="12dp"/>
+
+        <TextView
+            android:id="@+id/tv_max_x"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="X轴: 0.00 m/s²"
+            android:textSize="16sp"
+            android:layout_marginBottom="6dp"/>
+
+        <TextView
+            android:id="@+id/tv_max_y"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Y轴: 0.00 m/s²"
+            android:textSize="16sp"
+            android:layout_marginBottom="6dp"/>
+
+        <TextView
+            android:id="@+id/tv_max_z"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Z轴: 0.00 m/s²"
+            android:textSize="16sp"
+            android:layout_marginBottom="12dp"/>
+
+        <TextView
+            android:id="@+id/tv_max_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="总加速度: 0.00 m/s²"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/btn_reset_max"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="重置记录"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#FF5722"
+            android:textColor="#FFFFFF"/>
+
+    </LinearLayout>
+
+    <!-- 状态和操作区域 -->
+    <TextView
+        android:id="@+id/tv_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="监测中..."
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btn_start_record"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="开启记录"
+            android:layout_marginEnd="10dp"
+            android:backgroundTint="#4CAF50"
+            android:textColor="#FFFFFF"/>
+
+        <Button
+            android:id="@+id/btn_pause_record"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="停止记录"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="#FF9800"
+            android:textColor="#FFFFFF"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="摇动手机、旋转设备、自由落体"
+        android:textSize="14sp"
+        android:textColor="#666666"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20px"/>
+
+</LinearLayout>
