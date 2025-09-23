@@ -1,0 +1,26 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- 主箭头 -->
+    <path
+        android:strokeColor="#2196F3"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:pathData="M12,2 L12,22" />
+
+    <path
+        android:strokeColor="#2196F3"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:pathData="M8,6 L12,2 L16,6" />
+
+    <!-- 方向指示线 -->
+    <path
+        android:strokeColor="#4CAF50"
+        android:strokeWidth="1"
+        android:pathData="M12,12 L18,12" />
+
+</vector>

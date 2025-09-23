@@ -33,7 +33,8 @@ public class MMIActivity extends AppCompatActivity {
 
     private Button audioMusic, recordingBtn;
 
-    private Button lightSensorBtn, proximitySensorBtn, gravitySensorBtn, accelerationSensorBtn;
+    private Button lightSensorBtn, proximitySensorBtn, gravitySensorBtn, accelerationSensorBtn,
+            gyroscopeSensorBtn;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -68,6 +69,7 @@ public class MMIActivity extends AppCompatActivity {
         proximitySensorBtn = findViewById(R.id.btn_sensor_2);
         gravitySensorBtn = findViewById(R.id.btn_sensor_3);
         accelerationSensorBtn = findViewById(R.id.btn_sensor_4);
+        gyroscopeSensorBtn = findViewById(R.id.btn_sensor_5);
 
         brightnessBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, BrightnessActivity.class)));
         imageBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, ImageActivity.class)));
@@ -86,6 +88,7 @@ public class MMIActivity extends AppCompatActivity {
         proximitySensorBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, ProximityActivity.class)));
         gravitySensorBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, GravityActivity.class)));
         accelerationSensorBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, AccelerometerActivity.class)));
+        gyroscopeSensorBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, GyroscopeActivity.class)));
     }
 
     private void initMappings() {
