@@ -140,6 +140,6 @@
     <string name="cardMMI5Btn4">加速</string>
     <string name="cardMMI5Btn5">陀螺</string>
     <string name="cardMMI5Btn6">地磁</string>
-    <string name="cardMMI5Btn7">霍尔</string>
+    <string name="cardMMI5Btn7">小球</string>
     <string name="cardMMI5Btn8">SAR</string>
 </resources>
