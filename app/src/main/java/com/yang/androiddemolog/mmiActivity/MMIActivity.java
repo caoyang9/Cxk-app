@@ -128,13 +128,13 @@ public class MMIActivity extends AppCompatActivity {
 
     private void setupClickListeners() {
         // 为每个卡片设置点击监听器
-        setupCardClickListener(R.id.cardMMI1, R.id.contentMMI1, R.id.arrowMMI1);
-        setupCardClickListener(R.id.cardMMI2, R.id.contentMMI2, R.id.arrowMMI2);
-        setupCardClickListener(R.id.cardMMI3, R.id.contentMMI3, R.id.arrowMMI3);
-        setupCardClickListener(R.id.cardMMI4, R.id.contentMMI4, R.id.arrowMMI4);
-        setupCardClickListener(R.id.cardMMI5, R.id.contentMMI5, R.id.arrowMMI5);
-        setupCardClickListener(R.id.cardMMI6, R.id.contentMMI6, R.id.arrowMMI6);
-        setupCardClickListener(R.id.cardMMI7, R.id.contentMMI7, R.id.arrowMMI7);
+//        setupCardClickListener(R.id.cardMMI1, R.id.contentMMI1, R.id.arrowMMI1);
+//        setupCardClickListener(R.id.cardMMI2, R.id.contentMMI2, R.id.arrowMMI2);
+//        setupCardClickListener(R.id.cardMMI3, R.id.contentMMI3, R.id.arrowMMI3);
+//        setupCardClickListener(R.id.cardMMI4, R.id.contentMMI4, R.id.arrowMMI4);
+//        setupCardClickListener(R.id.cardMMI5, R.id.contentMMI5, R.id.arrowMMI5);
+//        setupCardClickListener(R.id.cardMMI6, R.id.contentMMI6, R.id.arrowMMI6);
+//        setupCardClickListener(R.id.cardMMI7, R.id.contentMMI7, R.id.arrowMMI7);
 
         // 为每个箭头设置点击监听器
         for (Integer arrowId : arrowToContentMap.keySet()) {
@@ -142,10 +142,10 @@ public class MMIActivity extends AppCompatActivity {
             arrow.setOnClickListener(v -> onArrowClick(arrowId));
         }
     }
-    private void setupCardClickListener(int cardId, int contentId, int arrowId) {
-        View card = findViewById(cardId);
-        card.setOnClickListener(v -> toggleCard(contentId, arrowId));
-    }
+//    private void setupCardClickListener(int cardId, int contentId, int arrowId) {
+//        View card = findViewById(cardId);
+//        card.setOnClickListener(v -> toggleCard(contentId, arrowId));
+//    }
 
     // 卡片点击处理方法
     private void toggleCard(int contentId, int arrowId) {

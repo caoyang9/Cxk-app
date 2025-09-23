@@ -123,16 +123,16 @@ public class MainActivity2 extends AppCompatActivity {
 
     private void setupClickListeners() {
         // 为每个卡片设置点击监听器
-        setupCardClickListener(R.id.card1, R.id.content1, R.id.arrow1);
-        setupCardClickListener(R.id.card2, R.id.content2, R.id.arrow2);
-        setupCardClickListener(R.id.card3, R.id.content3, R.id.arrow3);
-        setupCardClickListener(R.id.card4, R.id.content4, R.id.arrow4);
-        setupCardClickListener(R.id.card5, R.id.content5, R.id.arrow5);
-        setupCardClickListener(R.id.card6, R.id.content6, R.id.arrow6);
-        setupCardClickListener(R.id.card7, R.id.content7, R.id.arrow7);
-        setupCardClickListener(R.id.card8, R.id.content8, R.id.arrow8);
-        setupCardClickListener(R.id.card9, R.id.content9, R.id.arrow9);
-        setupCardClickListener(R.id.card10, R.id.content10, R.id.arrow10);
+//        setupCardClickListener(R.id.card1, R.id.content1, R.id.arrow1);
+//        setupCardClickListener(R.id.card2, R.id.content2, R.id.arrow2);
+//        setupCardClickListener(R.id.card3, R.id.content3, R.id.arrow3);
+//        setupCardClickListener(R.id.card4, R.id.content4, R.id.arrow4);
+//        setupCardClickListener(R.id.card5, R.id.content5, R.id.arrow5);
+//        setupCardClickListener(R.id.card6, R.id.content6, R.id.arrow6);
+//        setupCardClickListener(R.id.card7, R.id.content7, R.id.arrow7);
+//        setupCardClickListener(R.id.card8, R.id.content8, R.id.arrow8);
+//        setupCardClickListener(R.id.card9, R.id.content9, R.id.arrow9);
+//        setupCardClickListener(R.id.card10, R.id.content10, R.id.arrow10);
 
         // 为每个箭头设置点击监听器
         for (Integer arrowId : arrowToContentMap.keySet()) {
@@ -141,10 +141,10 @@ public class MainActivity2 extends AppCompatActivity {
         }
     }
 
-    private void setupCardClickListener(int cardId, int contentId, int arrowId) {
-        View card = findViewById(cardId);
-        card.setOnClickListener(v -> toggleCard(contentId, arrowId));
-    }
+//    private void setupCardClickListener(int cardId, int contentId, int arrowId) {
+//        View card = findViewById(cardId);
+//        card.setOnClickListener(v -> toggleCard(contentId, arrowId));
+//    }
 
     // 箭头点击处理方法
     private void onArrowClick(int arrowId) {
