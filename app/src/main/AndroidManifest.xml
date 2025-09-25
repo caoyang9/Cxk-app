@@ -90,6 +90,8 @@
         <activity android:name=".NoteSPActivity" android:exported="false"/>
         <activity android:name=".ExceptionActivity" android:exported="false"/>
         <activity android:name=".ContentProviderActivity" android:exported="false"/>
+        <activity android:name=".JumpActivity" android:exported="false"/>
+        <activity android:name=".Jump2Activity" android:exported="false"/>
         <activity android:name=".mmiActivity.MMIActivity" android:exported="false"/>
         <activity android:name=".mmiActivity.BrightnessActivity" android:exported="false"/>
         <activity android:name=".mmiActivity.ImageActivity" android:exported="false"/>

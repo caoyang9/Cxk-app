@@ -77,7 +77,7 @@
     <string name="card4">组件交互</string>
     <string name="card4btn1">对话框</string>
     <string name="card4btn2">打篮球</string>
-    <string name="card4btn3">待开放</string>
+    <string name="card4btn3">跳转</string>
 
     <string name="card5">Service</string>
     <string name="card5btn1">长通知</string>

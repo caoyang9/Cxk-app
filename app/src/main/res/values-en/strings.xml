@@ -77,7 +77,7 @@
     <string name="card4">Component interaction</string>
     <string name="card4btn1">Dialog </string>
     <string name="card4btn2">Ball</string>
-    <string name="card4btn3">Null</string>
+    <string name="card4btn3">Jump</string>
 
     <string name="card5">Service</string>
     <string name="card5btn1">Notice</string>

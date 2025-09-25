@@ -194,6 +194,8 @@ public class MainActivity2 extends AppCompatActivity {
                 startActivity(new Intent(MainActivity2.this, IntroductionActivity2.class)));
         findViewById(R.id.btn2_4_2).setOnClickListener(v ->
                 startActivity(new Intent(MainActivity2.this, BasketballActivity2.class)));
+        findViewById(R.id.btn2_4_3).setOnClickListener(v ->
+                startActivity(new Intent(MainActivity2.this, JumpActivity.class)));
         // card5
         findViewById(R.id.btn2_5_1).setOnClickListener(v ->
                 startActivity(new Intent(MainActivity2.this, ForegroundServiceActivity.class)));

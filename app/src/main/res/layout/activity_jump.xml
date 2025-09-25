@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="JumpActivity"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="30dp" />
+
+    <TextView
+        android:id="@+id/tv_received_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="等待来自Jump2Activity的消息..."
+        android:textSize="16sp"
+        android:background="#f0f0f0"
+        android:padding="12dp"
+        android:layout_marginBottom="30dp" />
+
+    <EditText
+        android:id="@+id/et_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="输入要发送到Jump2Activity的内容"
+        android:padding="12dp"
+        android:layout_marginBottom="20dp" />
+
+    <Button
+        android:id="@+id/btn_jump"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="跳转到Jump2Activity"
+        android:textSize="16sp"
+        android:backgroundTint="#215E21"/>
+
+</LinearLayout>
