@@ -1,25 +1,34 @@
 package com.yang.androiddemolog.uiActivity;
 
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.yang.androiddemolog.R;
+import com.yang.androiddemolog.SingActivity;
 
 public class SingActivity2 extends AppCompatActivity {
 
     private VideoView videoView;
+    private EditText etInput;
+    private Button btnSend;
+    private Button btnBack;
+    private TextView tvDisplay;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,13 +38,56 @@ public class SingActivity2 extends AppCompatActivity {
         showFanToast();
 
         initViews();
+        setupClickListeners();
         setupVideoPlayer();
+    }
+
+    private void setupClickListeners() {
+        btnSend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String inputText = etInput.getText().toString().trim();
+
+                if (inputText.isEmpty()) {
+                    Toast.makeText(SingActivity2.this, "请输入内容", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                showConfirmationDialog(inputText);
+            }
+        });
+
+        btnBack.setOnClickListener(v -> finish());
+    }
+
+    private void showConfirmationDialog(final String message) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("确认发送")
+                .setMessage("确定要发送吗？")
+                .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // 发送成功，更新TextView显示
+                        tvDisplay.setText("我自己: " + message);
+                        etInput.setText(""); // 清空输入框
+
+                        Toast.makeText(SingActivity2.this, "发送成功！", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                })
+                .show();
     }
 
     private void initViews() {
         videoView = findViewById(R.id.videoView);
-        Button btnBack = findViewById(R.id.btn_back);
-        btnBack.setOnClickListener(v -> finish());
+        etInput = findViewById(R.id.et_input);
+        btnSend = findViewById(R.id.btn_send);
+        tvDisplay = findViewById(R.id.tv_display);
+        btnBack = findViewById(R.id.btn_back);
     }
 
     private void setupVideoPlayer() {
