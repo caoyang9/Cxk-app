@@ -36,6 +36,8 @@ public class MMIActivity extends AppCompatActivity {
     private Button lightSensorBtn, proximitySensorBtn, gravitySensorBtn, accelerationSensorBtn,
             gyroscopeSensorBtn, magneticFieldSensorBtn, game1Btn, game2Btn;
 
+    private Button usbBtn;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,6 +76,8 @@ public class MMIActivity extends AppCompatActivity {
         game1Btn = findViewById(R.id.btn_sensor_7);
         game2Btn = findViewById(R.id.btn_sensor_8);
 
+        usbBtn = findViewById(R.id.btn_usb);
+
         brightnessBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, BrightnessActivity.class)));
         imageBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, ImageActivity.class)));
         touchBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, TouchActivity.class)));
@@ -95,6 +99,8 @@ public class MMIActivity extends AppCompatActivity {
         magneticFieldSensorBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, MagnetometerActivity.class)));
         game1Btn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, GyroBallActivity.class)));
         game2Btn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, CompassActivity.class)));
+
+        usbBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, USBActivity.class)));
     }
 
     private void initMappings() {

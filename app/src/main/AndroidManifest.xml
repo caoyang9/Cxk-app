@@ -49,10 +49,6 @@
     <!-- 声明使用距离传感器特性（可选，但推荐） -->
     <uses-feature android:name="android.hardware.sensor.proximity" />
 
-
-    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -110,6 +106,8 @@
         <activity android:name=".mmiActivity.MagnetometerActivity" android:exported="false"/>
         <activity android:name=".mmiActivity.GyroBallActivity" android:exported="false"/>
         <activity android:name=".mmiActivity.CompassActivity" android:exported="false"/>
+        <activity android:name=".mmiActivity.USBActivity" android:exported="true">
+        </activity>
         <!-- 重构的Activity -->
         <activity android:name=".environmentanddebug.HelloWorldActivity" android:exported="false"/>
         <activity android:name=".environmentanddebug.LogActivity" android:exported="false"/>
