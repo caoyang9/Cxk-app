@@ -36,7 +36,7 @@ public class MMIActivity extends AppCompatActivity {
     private Button lightSensorBtn, proximitySensorBtn, gravitySensorBtn, accelerationSensorBtn,
             gyroscopeSensorBtn, magneticFieldSensorBtn, game1Btn, game2Btn;
 
-    private Button usbBtn;
+    private Button usbBtn, otgBtn;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -77,6 +77,7 @@ public class MMIActivity extends AppCompatActivity {
         game2Btn = findViewById(R.id.btn_sensor_8);
 
         usbBtn = findViewById(R.id.btn_usb);
+        otgBtn = findViewById(R.id.btn_otg);
 
         brightnessBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, BrightnessActivity.class)));
         imageBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, ImageActivity.class)));
@@ -101,6 +102,7 @@ public class MMIActivity extends AppCompatActivity {
         game2Btn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, CompassActivity.class)));
 
         usbBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, USBActivity.class)));
+        otgBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, OTGActivity.class)));
     }
 
     private void initMappings() {
