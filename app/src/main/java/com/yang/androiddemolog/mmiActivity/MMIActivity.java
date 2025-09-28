@@ -38,6 +38,8 @@ public class MMIActivity extends AppCompatActivity {
 
     private Button usbBtn, otgBtn, batteryBtn;
 
+    private Button btBtn, wifiBtn, gpsBtn;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -80,6 +82,8 @@ public class MMIActivity extends AppCompatActivity {
         otgBtn = findViewById(R.id.btn_otg);
         batteryBtn = findViewById(R.id.btn_power);
 
+        btBtn = findViewById(R.id.btn_bt);
+
         brightnessBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, BrightnessActivity.class)));
         imageBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, ImageActivity.class)));
         touchBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, TouchActivity.class)));
@@ -106,6 +110,7 @@ public class MMIActivity extends AppCompatActivity {
         otgBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, OTGActivity.class)));
         batteryBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, BatteryActivity.class)));
 
+        btBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, BluetoothActivity.class)));
     }
 
     private void initMappings() {

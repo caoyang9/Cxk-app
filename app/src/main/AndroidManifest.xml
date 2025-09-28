@@ -54,6 +54,24 @@
         tools:ignore="ScopedStorage" />
     <uses-feature android:name="android.hardware.usb.host" android:required="true" />
 
+    <!-- 蓝牙基本权限 -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <!-- Android 6.0+ 需要位置权限来扫描蓝牙设备 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!-- Android 12+ 新的蓝牙权限 -->
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+
+    <!-- 声明需要蓝牙硬件 -->
+    <uses-feature
+        android:name="android.hardware.bluetooth"
+        android:required="true" />
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -123,6 +141,7 @@
                 android:resource="@xml/usb_device_filter" />
         </activity>
         <activity android:name=".mmiActivity.BatteryActivity" android:exported="false"/>
+        <activity android:name=".mmiActivity.BluetoothActivity" android:exported="false"/>
         <!-- 重构的Activity -->
         <activity android:name=".environmentanddebug.HelloWorldActivity" android:exported="false"/>
         <activity android:name=".environmentanddebug.LogActivity" android:exported="false"/>
