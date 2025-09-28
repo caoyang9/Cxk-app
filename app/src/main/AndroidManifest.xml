@@ -122,6 +122,7 @@
                 android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"
                 android:resource="@xml/usb_device_filter" />
         </activity>
+        <activity android:name=".mmiActivity.BatteryActivity" android:exported="false"/>
         <!-- 重构的Activity -->
         <activity android:name=".environmentanddebug.HelloWorldActivity" android:exported="false"/>
         <activity android:name=".environmentanddebug.LogActivity" android:exported="false"/>

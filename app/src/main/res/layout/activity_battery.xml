@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="电池信息监控"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="20dp" />
+
+    <TextView
+        android:id="@+id/tv_batteryLevel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="电量：获取中..."
+        android:textSize="18sp"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:id="@+id/tv_chargingStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="充电状态：获取中..."
+        android:textSize="18sp"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:id="@+id/tv_chargingType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="充电方式：获取中..."
+        android:textSize="18sp"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:id="@+id/tv_temperature"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="温度：获取中..."
+        android:textSize="18sp"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:id="@+id/tv_voltage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="电压：获取中..."
+        android:textSize="18sp"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:id="@+id/tv_health"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="健康状况：获取中..."
+        android:textSize="18sp"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:id="@+id/tv_technology"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="电池技术：获取中..."
+        android:textSize="18sp"
+        android:layout_marginBottom="20dp" />
+
+    <Button
+        android:id="@+id/btn_refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="手动刷新"
+        android:layout_gravity="center" />
+
+</LinearLayout>

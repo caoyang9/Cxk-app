@@ -665,7 +665,7 @@
                             android:textSize="14sp" />
 
                         <Button
-                            android:id="@+id/power"
+                            android:id="@+id/btn_power"
                             android:layout_width="0dp"
                             android:layout_height="49dp"
                             android:layout_weight="1"
