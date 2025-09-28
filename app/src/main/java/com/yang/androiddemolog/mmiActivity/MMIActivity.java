@@ -83,6 +83,7 @@ public class MMIActivity extends AppCompatActivity {
         batteryBtn = findViewById(R.id.btn_power);
 
         btBtn = findViewById(R.id.btn_bt);
+        wifiBtn = findViewById(R.id.btn_wifi);
 
         brightnessBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, BrightnessActivity.class)));
         imageBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, ImageActivity.class)));
@@ -111,6 +112,7 @@ public class MMIActivity extends AppCompatActivity {
         batteryBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, BatteryActivity.class)));
 
         btBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, BluetoothActivity.class)));
+        wifiBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, WifiActivity.class)));
     }
 
     private void initMappings() {

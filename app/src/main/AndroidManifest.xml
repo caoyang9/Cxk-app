@@ -67,10 +67,13 @@
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
 
     <!-- 声明需要蓝牙硬件 -->
-    <uses-feature
-        android:name="android.hardware.bluetooth"
-        android:required="true" />
+    <uses-feature android:name="android.hardware.bluetooth" android:required="true" />
 
+    <!-- WiFi相关权限 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!-- Android 6.0+ 需要位置权限来获取WiFi扫描结果 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -142,6 +145,7 @@
         </activity>
         <activity android:name=".mmiActivity.BatteryActivity" android:exported="false"/>
         <activity android:name=".mmiActivity.BluetoothActivity" android:exported="false"/>
+        <activity android:name=".mmiActivity.WifiActivity" android:exported="false"/>
         <!-- 重构的Activity -->
         <activity android:name=".environmentanddebug.HelloWorldActivity" android:exported="false"/>
         <activity android:name=".environmentanddebug.LogActivity" android:exported="false"/>
