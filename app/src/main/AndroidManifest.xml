@@ -75,6 +75,15 @@
     <!-- Android 6.0+ 需要位置权限来获取WiFi扫描结果 -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
+    <!-- 精确位置权限 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 网络权限（用于网络定位） -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 网络状态权限 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 互联网权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -146,6 +155,7 @@
         <activity android:name=".mmiActivity.BatteryActivity" android:exported="false"/>
         <activity android:name=".mmiActivity.BluetoothActivity" android:exported="false"/>
         <activity android:name=".mmiActivity.WifiActivity" android:exported="false"/>
+        <activity android:name=".mmiActivity.GPSActivity" android:exported="false"/>
         <!-- 重构的Activity -->
         <activity android:name=".environmentanddebug.HelloWorldActivity" android:exported="false"/>
         <activity android:name=".environmentanddebug.LogActivity" android:exported="false"/>

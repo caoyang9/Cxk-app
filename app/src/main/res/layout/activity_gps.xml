@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- 按钮区域 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnStartGPS"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:text="开始定位"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btnStopGPS"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:text="停止定位"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <!-- 状态显示 -->
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:padding="12dp"
+        android:background="#f0f0f0"
+        android:text="状态：请点击开始定位"
+        android:textSize="14sp" />
+
+    <!-- 位置信息显示 -->
+    <TextView
+        android:id="@+id/tvLocationInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:padding="12dp"
+        android:background="#e8f4fd"
+        android:text="位置信息：等待定位..."
+        android:textSize="14sp" />
+
+</LinearLayout>

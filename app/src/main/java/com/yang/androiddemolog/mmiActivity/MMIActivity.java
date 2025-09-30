@@ -84,6 +84,7 @@ public class MMIActivity extends AppCompatActivity {
 
         btBtn = findViewById(R.id.btn_bt);
         wifiBtn = findViewById(R.id.btn_wifi);
+        gpsBtn = findViewById(R.id.btn_gps);
 
         brightnessBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, BrightnessActivity.class)));
         imageBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, ImageActivity.class)));
@@ -113,6 +114,7 @@ public class MMIActivity extends AppCompatActivity {
 
         btBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, BluetoothActivity.class)));
         wifiBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, WifiActivity.class)));
+        gpsBtn.setOnClickListener(v -> startActivity(new Intent(MMIActivity.this, GPSActivity.class)));
     }
 
     private void initMappings() {
